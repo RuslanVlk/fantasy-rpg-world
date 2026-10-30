@@ -66,15 +66,15 @@ def main():
             "This pack is a visual base/reference library, not a replacement for the project's supplied art direction."
         ]
     }
-    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\\n", encoding="utf-8")
+    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     (OUT / "CREDITS.md").write_text(
-        "# Kenney Roguelike/RPG pack\\n\\n"
-        "Author: Kenney. Official asset page: https://kenney.nl/assets/roguelike-rpg-pack\\n"
-        "License: CC0-1.0 (public domain dedication): https://creativecommons.org/publicdomain/zero/1.0/\\n"
-        "The official page identifies the pack as 16×16 2D assets under Creative Commons CC0.\\n\\n"
+        "# Kenney Roguelike/RPG pack\n\n"
+        "Author: Kenney. Official asset page: https://kenney.nl/assets/roguelike-rpg-pack\n"
+        "License: CC0-1.0 (public domain dedication): https://creativecommons.org/publicdomain/zero/1.0/\n"
+        "The official page identifies the pack as 16×16 2D assets under Creative Commons CC0.\n\n"
         "The source sheet is stored as an unchanged atlas. Source file mirror: "
-        "https://github.com/cosmic-canopy-studio/rimpocalypse/blob/main/assets/sprite_sheets/roguelikeSheet_transparent.png\\n"
-        "Original sheet blob SHA: " + UPSTREAM_BLOB_SHA + "\\n",
+        "https://github.com/cosmic-canopy-studio/rimpocalypse/blob/main/assets/sprite_sheets/roguelikeSheet_transparent.png\n"
+        "Original sheet blob SHA: " + UPSTREAM_BLOB_SHA + "\n",
         encoding="utf-8"
     )
 
