@@ -1,0 +1,189 @@
+{
+  "type": "tileset",
+  "version": "1.10",
+  "tiledversion": "1.12.2",
+  "name": "ForestDemoProps",
+  "tilewidth": 64,
+  "tileheight": 64,
+  "tilecount": 22,
+  "columns": 0,
+  "objectalignment": "bottom",
+  "tiles": [
+    {
+      "id": 0,
+      "image": "../../environment/forest/trees/tree_small_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 1,
+      "image": "../../environment/forest/trees/tree_tall_01.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 2,
+      "image": "../../environment/forest/trees/tree_small_02.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 3,
+      "image": "../../environment/forest/trees/tree_tall_02.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 4,
+      "image": "../../environment/forest/trees/tree_small_03.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 5,
+      "image": "../../environment/forest/trees/tree_tall_03.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 6,
+      "image": "../../environment/forest/trees/tree_small_04.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 7,
+      "image": "../../environment/forest/trees/tree_tall_04.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 8,
+      "image": "../../environment/forest/trees/tree_small_05.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 9,
+      "image": "../../environment/forest/trees/tree_tall_05.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 10,
+      "image": "../../environment/forest/trees/tree_small_06.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 11,
+      "image": "../../environment/forest/trees/tree_tall_06.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 12,
+      "image": "../../environment/forest/trees/tree_fruit_01.png",
+      "imagewidth": 16,
+      "imageheight": 32,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 13,
+      "image": "../../environment/forest/trees/tree_dead_01.png",
+      "imagewidth": 16,
+      "imageheight": 48,
+      "type": "tree",
+      "class": "tree"
+    },
+    {
+      "id": 14,
+      "image": "../../environment/forest/plants/flower_blue_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 15,
+      "image": "../../environment/forest/plants/flower_orange_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 16,
+      "image": "../../environment/forest/plants/flower_purple_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 17,
+      "image": "../../environment/forest/plants/flower_white_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 18,
+      "image": "../../environment/forest/plants/ground_cover_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 19,
+      "image": "../../environment/forest/plants/ground_cover_02.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 20,
+      "image": "../../environment/forest/plants/berry_shrub_01.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    },
+    {
+      "id": 21,
+      "image": "../../environment/forest/plants/berry_shrub_02.png",
+      "imagewidth": 16,
+      "imageheight": 16,
+      "type": "plant",
+      "class": "plant"
+    }
+  ]
+}
