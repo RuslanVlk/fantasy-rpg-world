@@ -1,0 +1,540 @@
+{
+  "layout": "47-tile-blob",
+  "tile_width": 64,
+  "tile_height": 64,
+  "atlas_columns": 8,
+  "atlas_rows": 6,
+  "white": "overlay terrain A",
+  "black": "leave base terrain B visible",
+  "bit_flags": {
+    "N": 1,
+    "E": 2,
+    "S": 4,
+    "W": 8,
+    "NE": 16,
+    "SE": 32,
+    "SW": 64,
+    "NW": 128
+  },
+  "diagonal_rule": "A diagonal flag is valid only when both adjacent cardinal flags are set.",
+  "edge_depth_pixels": 10,
+  "masks": [
+    {
+      "index": 0,
+      "neighbor_mask": 0,
+      "file": "mask_000.png",
+      "neighbors": []
+    },
+    {
+      "index": 1,
+      "neighbor_mask": 1,
+      "file": "mask_001.png",
+      "neighbors": [
+        "N"
+      ]
+    },
+    {
+      "index": 2,
+      "neighbor_mask": 2,
+      "file": "mask_002.png",
+      "neighbors": [
+        "E"
+      ]
+    },
+    {
+      "index": 3,
+      "neighbor_mask": 3,
+      "file": "mask_003.png",
+      "neighbors": [
+        "N",
+        "E"
+      ]
+    },
+    {
+      "index": 4,
+      "neighbor_mask": 4,
+      "file": "mask_004.png",
+      "neighbors": [
+        "S"
+      ]
+    },
+    {
+      "index": 5,
+      "neighbor_mask": 5,
+      "file": "mask_005.png",
+      "neighbors": [
+        "N",
+        "S"
+      ]
+    },
+    {
+      "index": 6,
+      "neighbor_mask": 6,
+      "file": "mask_006.png",
+      "neighbors": [
+        "E",
+        "S"
+      ]
+    },
+    {
+      "index": 7,
+      "neighbor_mask": 7,
+      "file": "mask_007.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    {
+      "index": 8,
+      "neighbor_mask": 8,
+      "file": "mask_008.png",
+      "neighbors": [
+        "W"
+      ]
+    },
+    {
+      "index": 9,
+      "neighbor_mask": 9,
+      "file": "mask_009.png",
+      "neighbors": [
+        "N",
+        "W"
+      ]
+    },
+    {
+      "index": 10,
+      "neighbor_mask": 10,
+      "file": "mask_010.png",
+      "neighbors": [
+        "E",
+        "W"
+      ]
+    },
+    {
+      "index": 11,
+      "neighbor_mask": 11,
+      "file": "mask_011.png",
+      "neighbors": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    {
+      "index": 12,
+      "neighbor_mask": 12,
+      "file": "mask_012.png",
+      "neighbors": [
+        "S",
+        "W"
+      ]
+    },
+    {
+      "index": 13,
+      "neighbor_mask": 13,
+      "file": "mask_013.png",
+      "neighbors": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    {
+      "index": 14,
+      "neighbor_mask": 14,
+      "file": "mask_014.png",
+      "neighbors": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    {
+      "index": 15,
+      "neighbor_mask": 15,
+      "file": "mask_015.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    {
+      "index": 16,
+      "neighbor_mask": 19,
+      "file": "mask_019.png",
+      "neighbors": [
+        "N",
+        "E",
+        "NE"
+      ]
+    },
+    {
+      "index": 17,
+      "neighbor_mask": 23,
+      "file": "mask_023.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "NE"
+      ]
+    },
+    {
+      "index": 18,
+      "neighbor_mask": 27,
+      "file": "mask_027.png",
+      "neighbors": [
+        "N",
+        "E",
+        "W",
+        "NE"
+      ]
+    },
+    {
+      "index": 19,
+      "neighbor_mask": 31,
+      "file": "mask_031.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE"
+      ]
+    },
+    {
+      "index": 20,
+      "neighbor_mask": 38,
+      "file": "mask_038.png",
+      "neighbors": [
+        "E",
+        "S",
+        "SE"
+      ]
+    },
+    {
+      "index": 21,
+      "neighbor_mask": 39,
+      "file": "mask_039.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "SE"
+      ]
+    },
+    {
+      "index": 22,
+      "neighbor_mask": 46,
+      "file": "mask_046.png",
+      "neighbors": [
+        "E",
+        "S",
+        "W",
+        "SE"
+      ]
+    },
+    {
+      "index": 23,
+      "neighbor_mask": 47,
+      "file": "mask_047.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "SE"
+      ]
+    },
+    {
+      "index": 24,
+      "neighbor_mask": 55,
+      "file": "mask_055.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "NE",
+        "SE"
+      ]
+    },
+    {
+      "index": 25,
+      "neighbor_mask": 63,
+      "file": "mask_063.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "SE"
+      ]
+    },
+    {
+      "index": 26,
+      "neighbor_mask": 76,
+      "file": "mask_076.png",
+      "neighbors": [
+        "S",
+        "W",
+        "SW"
+      ]
+    },
+    {
+      "index": 27,
+      "neighbor_mask": 77,
+      "file": "mask_077.png",
+      "neighbors": [
+        "N",
+        "S",
+        "W",
+        "SW"
+      ]
+    },
+    {
+      "index": 28,
+      "neighbor_mask": 78,
+      "file": "mask_078.png",
+      "neighbors": [
+        "E",
+        "S",
+        "W",
+        "SW"
+      ]
+    },
+    {
+      "index": 29,
+      "neighbor_mask": 79,
+      "file": "mask_079.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "SW"
+      ]
+    },
+    {
+      "index": 30,
+      "neighbor_mask": 95,
+      "file": "mask_095.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "SW"
+      ]
+    },
+    {
+      "index": 31,
+      "neighbor_mask": 110,
+      "file": "mask_110.png",
+      "neighbors": [
+        "E",
+        "S",
+        "W",
+        "SE",
+        "SW"
+      ]
+    },
+    {
+      "index": 32,
+      "neighbor_mask": 111,
+      "file": "mask_111.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "SE",
+        "SW"
+      ]
+    },
+    {
+      "index": 33,
+      "neighbor_mask": 127,
+      "file": "mask_127.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "SE",
+        "SW"
+      ]
+    },
+    {
+      "index": 34,
+      "neighbor_mask": 137,
+      "file": "mask_137.png",
+      "neighbors": [
+        "N",
+        "W",
+        "NW"
+      ]
+    },
+    {
+      "index": 35,
+      "neighbor_mask": 139,
+      "file": "mask_139.png",
+      "neighbors": [
+        "N",
+        "E",
+        "W",
+        "NW"
+      ]
+    },
+    {
+      "index": 36,
+      "neighbor_mask": 141,
+      "file": "mask_141.png",
+      "neighbors": [
+        "N",
+        "S",
+        "W",
+        "NW"
+      ]
+    },
+    {
+      "index": 37,
+      "neighbor_mask": 143,
+      "file": "mask_143.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NW"
+      ]
+    },
+    {
+      "index": 38,
+      "neighbor_mask": 155,
+      "file": "mask_155.png",
+      "neighbors": [
+        "N",
+        "E",
+        "W",
+        "NE",
+        "NW"
+      ]
+    },
+    {
+      "index": 39,
+      "neighbor_mask": 159,
+      "file": "mask_159.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "NW"
+      ]
+    },
+    {
+      "index": 40,
+      "neighbor_mask": 175,
+      "file": "mask_175.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "SE",
+        "NW"
+      ]
+    },
+    {
+      "index": 41,
+      "neighbor_mask": 191,
+      "file": "mask_191.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "SE",
+        "NW"
+      ]
+    },
+    {
+      "index": 42,
+      "neighbor_mask": 205,
+      "file": "mask_205.png",
+      "neighbors": [
+        "N",
+        "S",
+        "W",
+        "SW",
+        "NW"
+      ]
+    },
+    {
+      "index": 43,
+      "neighbor_mask": 207,
+      "file": "mask_207.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "SW",
+        "NW"
+      ]
+    },
+    {
+      "index": 44,
+      "neighbor_mask": 223,
+      "file": "mask_223.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "SW",
+        "NW"
+      ]
+    },
+    {
+      "index": 45,
+      "neighbor_mask": 239,
+      "file": "mask_239.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "SE",
+        "SW",
+        "NW"
+      ]
+    },
+    {
+      "index": 46,
+      "neighbor_mask": 255,
+      "file": "mask_255.png",
+      "neighbors": [
+        "N",
+        "E",
+        "S",
+        "W",
+        "NE",
+        "SE",
+        "SW",
+        "NW"
+      ]
+    }
+  ],
+  "note": "Generic alpha templates; the game map renderer must select a mask from the 8-neighbour terrain pattern."
+}

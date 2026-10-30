@@ -1,0 +1,52 @@
+{
+  "tile_width": 64,
+  "tile_height": 64,
+  "atlas_columns": 4,
+  "atlas_rows": 2,
+  "projection": "diagonal 3/4",
+  "materials": [
+    {
+      "id": 0,
+      "name": "grass_deep",
+      "file": "grass_deep.png"
+    },
+    {
+      "id": 1,
+      "name": "grass_light",
+      "file": "grass_light.png"
+    },
+    {
+      "id": 2,
+      "name": "dirt",
+      "file": "dirt.png"
+    },
+    {
+      "id": 3,
+      "name": "forest_path",
+      "file": "forest_path.png"
+    },
+    {
+      "id": 4,
+      "name": "stone",
+      "file": "stone.png"
+    },
+    {
+      "id": 5,
+      "name": "sand",
+      "file": "sand.png"
+    },
+    {
+      "id": 6,
+      "name": "water",
+      "file": "water.png"
+    },
+    {
+      "id": 7,
+      "name": "mud",
+      "file": "mud.png"
+    }
+  ],
+  "generator_seed": 20261030,
+  "tileable": true,
+  "note": "Procedural base materials for iteration; not final hand-painted production art."
+}
