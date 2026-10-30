@@ -1,0 +1,4067 @@
+{
+  "format": "fantasy-rpg-forest-demo-v1",
+  "seed": 20261030,
+  "projection": "diagonal 3/4",
+  "grid": {
+    "width": 20,
+    "height": 14,
+    "tile_width": 64,
+    "tile_height": 64
+  },
+  "render_size": [
+    1280,
+    896
+  ],
+  "layers": [
+    {
+      "name": "base",
+      "material": "grass_deep",
+      "cells": [
+        {
+          "x": 0,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 9,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 11,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 14,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 15,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 17,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 19,
+          "y": 0,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 0,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 4,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 6,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 9,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 14,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 15,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 16,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 17,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 19,
+          "y": 1,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 0,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 6,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 7,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 9,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 11,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 13,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 14,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 15,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 17,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 18,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 19,
+          "y": 2,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 7,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 9,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 10,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 11,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 14,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 15,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 16,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 17,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 18,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 19,
+          "y": 3,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 7,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 8,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 9,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 15,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 17,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 18,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 19,
+          "y": 4,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 10,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 12,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 13,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 15,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 17,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 18,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 19,
+          "y": 5,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 11,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 12,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 13,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 14,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 15,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 17,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 18,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 19,
+          "y": 6,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 6,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 9,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 11,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 12,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 13,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 14,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 15,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 17,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 18,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 19,
+          "y": 7,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 0,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 6,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 9,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 10,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 11,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 12,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 13,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 15,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 17,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 19,
+          "y": 8,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 0,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 1,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 3,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 5,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 9,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 10,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 12,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 14,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 15,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 17,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 19,
+          "y": 9,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 0,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 1,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 3,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 4,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 6,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 9,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 12,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 13,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 14,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 15,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 16,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 17,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 18,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 19,
+          "y": 10,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 0,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 2,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 3,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 4,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 5,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 6,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 9,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 10,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 13,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 15,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 17,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 19,
+          "y": 11,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 0,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 2,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 4,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 6,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 7,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 9,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 11,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 14,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 15,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 17,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 19,
+          "y": 12,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 0,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 2,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 3,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 5,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 6,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 7,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 9,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 15,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/grass_deep.png"
+        },
+        {
+          "x": 16,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 17,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v02.png"
+        },
+        {
+          "x": 19,
+          "y": 13,
+          "material": "grass_deep",
+          "texture": "assets/tilesets/forest_ground/variants/grass_deep_v04.png"
+        }
+      ]
+    },
+    {
+      "name": "grass_light",
+      "material": "grass_light",
+      "cells": [
+        {
+          "x": 10,
+          "y": 0,
+          "material": "grass_light",
+          "neighbor_mask": 4,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_004.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "material": "grass_light",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 2,
+          "y": 1,
+          "material": "grass_light",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 1,
+          "material": "grass_light",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 9,
+          "y": 1,
+          "material": "grass_light",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v03.png"
+        },
+        {
+          "x": 10,
+          "y": 1,
+          "material": "grass_light",
+          "neighbor_mask": 15,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_015.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 11,
+          "y": 1,
+          "material": "grass_light",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 2,
+          "material": "grass_light",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "material": "grass_light",
+          "neighbor_mask": 191,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_191.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "material": "grass_light",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "material": "grass_light",
+          "neighbor_mask": 1,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_001.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "material": "grass_light",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v03.png"
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "material": "grass_light",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 7,
+          "material": "grass_light",
+          "neighbor_mask": 4,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_004.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v04.png"
+        },
+        {
+          "x": 6,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 7,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 12,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v04.png"
+        },
+        {
+          "x": 13,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 15,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_015.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 14,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 17,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 14,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_014.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 19,
+          "y": 8,
+          "material": "grass_light",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 6,
+          "y": 9,
+          "material": "grass_light",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v04.png"
+        },
+        {
+          "x": 7,
+          "y": 9,
+          "material": "grass_light",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/grass_light.png"
+        },
+        {
+          "x": 8,
+          "y": 9,
+          "material": "grass_light",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v03.png"
+        },
+        {
+          "x": 13,
+          "y": 9,
+          "material": "grass_light",
+          "neighbor_mask": 1,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_001.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v02.png"
+        },
+        {
+          "x": 18,
+          "y": 9,
+          "material": "grass_light",
+          "neighbor_mask": 1,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_001.png",
+          "texture": "assets/tilesets/forest_ground/variants/grass_light_v04.png"
+        }
+      ]
+    },
+    {
+      "name": "sand",
+      "material": "sand",
+      "cells": [
+        {
+          "x": 12,
+          "y": 1,
+          "material": "sand",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 1,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 14,
+          "y": 1,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 15,
+          "y": 1,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 1,
+          "material": "sand",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 11,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 12,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 127,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_127.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 14,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 15,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 239,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_239.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 17,
+          "y": 2,
+          "material": "sand",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 0,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 9,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 11,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 127,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_127.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 15,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 17,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 239,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_239.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 19,
+          "y": 3,
+          "material": "sand",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 239,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_239.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 7,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 127,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_127.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 9,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 223,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_223.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 14,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 15,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 191,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_191.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 16,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 17,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 18,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 19,
+          "y": 4,
+          "material": "sand",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 10,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 12,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 223,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_223.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 13,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 15,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 191,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_191.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 17,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 19,
+          "y": 5,
+          "material": "sand",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 0,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 9,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 223,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_223.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 10,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 11,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 16,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 17,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 18,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 191,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_191.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 19,
+          "y": 6,
+          "material": "sand",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 0,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 1,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 191,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_191.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 223,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_223.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 6,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 9,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 18,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 19,
+          "y": 7,
+          "material": "sand",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "material": "sand",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "material": "sand",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 1,
+          "y": 9,
+          "material": "sand",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        },
+        {
+          "x": 3,
+          "y": 9,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 4,
+          "y": 9,
+          "material": "sand",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 5,
+          "y": 9,
+          "material": "sand",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 1,
+          "y": 10,
+          "material": "sand",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 10,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v03.png"
+        },
+        {
+          "x": 3,
+          "y": 10,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 4,
+          "y": 10,
+          "material": "sand",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/sand.png"
+        },
+        {
+          "x": 5,
+          "y": 10,
+          "material": "sand",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/sand_v02.png"
+        }
+      ]
+    },
+    {
+      "name": "water",
+      "material": "water",
+      "cells": [
+        {
+          "x": 13,
+          "y": 2,
+          "material": "water",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 14,
+          "y": 2,
+          "material": "water",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 15,
+          "y": 2,
+          "material": "water",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "material": "water",
+          "neighbor_mask": 6,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_006.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "material": "water",
+          "neighbor_mask": 27,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_027.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 14,
+          "y": 3,
+          "material": "water",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 15,
+          "y": 3,
+          "material": "water",
+          "neighbor_mask": 139,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_139.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 16,
+          "y": 3,
+          "material": "water",
+          "neighbor_mask": 12,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_012.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 0,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 4,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_004.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 9,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 78,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_078.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 9,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_009.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 3,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_003.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 17,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 46,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_046.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 18,
+          "y": 4,
+          "material": "water",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 0,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 3,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_003.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 46,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_046.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 76,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_076.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 38,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_038.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 6,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 7,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 8,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 78,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_078.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 9,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 27,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_027.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 17,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 18,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 139,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_139.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 19,
+          "y": 5,
+          "material": "water",
+          "neighbor_mask": 12,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_012.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 1,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 175,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_175.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 110,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_110.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 4,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 95,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_095.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 5,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 6,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 7,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 8,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 19,
+          "y": 6,
+          "material": "water",
+          "neighbor_mask": 1,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_001.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 2,
+          "y": 7,
+          "material": "water",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 3,
+          "y": 7,
+          "material": "water",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "material": "water",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "material": "water",
+          "neighbor_mask": 55,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_055.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v04.png"
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "material": "water",
+          "neighbor_mask": 255,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_255.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "material": "water",
+          "neighbor_mask": 205,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_205.png",
+          "texture": "assets/tilesets/forest_ground/water.png"
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "material": "water",
+          "neighbor_mask": 19,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_019.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 3,
+          "y": 9,
+          "material": "water",
+          "neighbor_mask": 155,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_155.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v03.png"
+        },
+        {
+          "x": 4,
+          "y": 9,
+          "material": "water",
+          "neighbor_mask": 137,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_137.png",
+          "texture": "assets/tilesets/forest_ground/variants/water_v02.png"
+        }
+      ]
+    },
+    {
+      "name": "stone",
+      "material": "stone",
+      "cells": [
+        {
+          "x": 16,
+          "y": 8,
+          "material": "stone",
+          "neighbor_mask": 0,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_000.png",
+          "texture": "assets/tilesets/forest_ground/variants/stone_v04.png"
+        }
+      ]
+    },
+    {
+      "name": "forest_path",
+      "material": "forest_path",
+      "cells": [
+        {
+          "x": 19,
+          "y": 10,
+          "material": "forest_path",
+          "neighbor_mask": 0,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_000.png",
+          "texture": "assets/tilesets/forest_ground/forest_path.png"
+        },
+        {
+          "x": 3,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v04.png"
+        },
+        {
+          "x": 4,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v04.png"
+        },
+        {
+          "x": 5,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/forest_path.png"
+        },
+        {
+          "x": 6,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v03.png"
+        },
+        {
+          "x": 11,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 12,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 13,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v03.png"
+        },
+        {
+          "x": 14,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 17,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 18,
+          "y": 11,
+          "material": "forest_path",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v04.png"
+        },
+        {
+          "x": 0,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v04.png"
+        },
+        {
+          "x": 1,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/forest_path.png"
+        },
+        {
+          "x": 2,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 7,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 8,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v03.png"
+        },
+        {
+          "x": 9,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 10,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_010.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 10,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/forest_path.png"
+        },
+        {
+          "x": 15,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 2,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_002.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v02.png"
+        },
+        {
+          "x": 16,
+          "y": 12,
+          "material": "forest_path",
+          "neighbor_mask": 8,
+          "mask": "assets/tilesets/forest_ground/blob_masks/mask_008.png",
+          "texture": "assets/tilesets/forest_ground/variants/forest_path_v04.png"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "prop_001",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_tall_01.png",
+      "sprite_id": "tree_tall_01",
+      "cell": [
+        1,
+        1
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 128,
+      "pixel_position": [
+        64,
+        0
+      ],
+      "display_size": [
+        64,
+        128
+      ]
+    },
+    {
+      "id": "prop_002",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_tall_03.png",
+      "sprite_id": "tree_tall_03",
+      "cell": [
+        5,
+        1
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 128,
+      "pixel_position": [
+        320,
+        0
+      ],
+      "display_size": [
+        64,
+        128
+      ]
+    },
+    {
+      "id": "prop_003",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_dead_01.png",
+      "sprite_id": "tree_dead_01",
+      "cell": [
+        9,
+        2
+      ],
+      "size": [
+        16,
+        48
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 192,
+      "pixel_position": [
+        576,
+        0
+      ],
+      "display_size": [
+        64,
+        192
+      ]
+    },
+    {
+      "id": "prop_004",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_tall_05.png",
+      "sprite_id": "tree_tall_05",
+      "cell": [
+        18,
+        1
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 128,
+      "pixel_position": [
+        1152,
+        0
+      ],
+      "display_size": [
+        64,
+        128
+      ]
+    },
+    {
+      "id": "prop_005",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_fruit_01.png",
+      "sprite_id": "tree_fruit_01",
+      "cell": [
+        6,
+        9
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 640,
+      "pixel_position": [
+        384,
+        512
+      ],
+      "display_size": [
+        64,
+        128
+      ]
+    },
+    {
+      "id": "prop_006",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_tall_04.png",
+      "sprite_id": "tree_tall_04",
+      "cell": [
+        12,
+        9
+      ],
+      "size": [
+        16,
+        32
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 640,
+      "pixel_position": [
+        768,
+        512
+      ],
+      "display_size": [
+        64,
+        128
+      ]
+    },
+    {
+      "id": "prop_007",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_small_05.png",
+      "sprite_id": "tree_small_05",
+      "cell": [
+        17,
+        8
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 576,
+      "pixel_position": [
+        1088,
+        512
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_008",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_small_03.png",
+      "sprite_id": "tree_small_03",
+      "cell": [
+        10,
+        9
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 640,
+      "pixel_position": [
+        640,
+        576
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_009",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_small_01.png",
+      "sprite_id": "tree_small_01",
+      "cell": [
+        19,
+        8
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 576,
+      "pixel_position": [
+        1216,
+        512
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_010",
+      "type": "tree",
+      "sprite": "assets/environment/forest/trees/tree_small_04.png",
+      "sprite_id": "tree_small_04",
+      "cell": [
+        15,
+        9
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 640,
+      "pixel_position": [
+        960,
+        576
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_011",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_blue_01.png",
+      "sprite_id": "flower_blue_01",
+      "cell": [
+        3,
+        13
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 896,
+      "pixel_position": [
+        192,
+        832
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_012",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_purple_01.png",
+      "sprite_id": "flower_purple_01",
+      "cell": [
+        13,
+        13
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 896,
+      "pixel_position": [
+        832,
+        832
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_013",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/ground_cover_01.png",
+      "sprite_id": "ground_cover_01",
+      "cell": [
+        12,
+        7
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 512,
+      "pixel_position": [
+        768,
+        448
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_014",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/berry_shrub_02.png",
+      "sprite_id": "berry_shrub_02",
+      "cell": [
+        14,
+        13
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 896,
+      "pixel_position": [
+        896,
+        832
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_015",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_orange_01.png",
+      "sprite_id": "flower_orange_01",
+      "cell": [
+        12,
+        12
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 832,
+      "pixel_position": [
+        768,
+        768
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_016",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/berry_shrub_01.png",
+      "sprite_id": "berry_shrub_01",
+      "cell": [
+        10,
+        0
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 64,
+      "pixel_position": [
+        640,
+        0
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_017",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_purple_01.png",
+      "sprite_id": "flower_purple_01",
+      "cell": [
+        5,
+        12
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 832,
+      "pixel_position": [
+        320,
+        768
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_018",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/berry_shrub_01.png",
+      "sprite_id": "berry_shrub_01",
+      "cell": [
+        10,
+        7
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 512,
+      "pixel_position": [
+        640,
+        448
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_019",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/ground_cover_01.png",
+      "sprite_id": "ground_cover_01",
+      "cell": [
+        6,
+        12
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 832,
+      "pixel_position": [
+        384,
+        768
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_020",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_white_01.png",
+      "sprite_id": "flower_white_01",
+      "cell": [
+        18,
+        13
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 896,
+      "pixel_position": [
+        1152,
+        832
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_021",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/ground_cover_01.png",
+      "sprite_id": "ground_cover_01",
+      "cell": [
+        16,
+        11
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 768,
+      "pixel_position": [
+        1024,
+        704
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_022",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_white_01.png",
+      "sprite_id": "flower_white_01",
+      "cell": [
+        14,
+        0
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 64,
+      "pixel_position": [
+        896,
+        0
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_023",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/berry_shrub_01.png",
+      "sprite_id": "berry_shrub_01",
+      "cell": [
+        9,
+        11
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 768,
+      "pixel_position": [
+        576,
+        704
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_024",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/ground_cover_02.png",
+      "sprite_id": "ground_cover_02",
+      "cell": [
+        18,
+        10
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 704,
+      "pixel_position": [
+        1152,
+        640
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_025",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/berry_shrub_02.png",
+      "sprite_id": "berry_shrub_02",
+      "cell": [
+        10,
+        13
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 896,
+      "pixel_position": [
+        640,
+        832
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_026",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/ground_cover_01.png",
+      "sprite_id": "ground_cover_01",
+      "cell": [
+        8,
+        0
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 64,
+      "pixel_position": [
+        512,
+        0
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_027",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_white_01.png",
+      "sprite_id": "flower_white_01",
+      "cell": [
+        16,
+        0
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 64,
+      "pixel_position": [
+        1024,
+        0
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    },
+    {
+      "id": "prop_028",
+      "type": "plant",
+      "sprite": "assets/environment/forest/plants/flower_white_01.png",
+      "sprite_id": "flower_white_01",
+      "cell": [
+        3,
+        0
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "anchor": "bottom_center",
+      "sort_y": 64,
+      "pixel_position": [
+        192,
+        0
+      ],
+      "display_size": [
+        64,
+        64
+      ]
+    }
+  ],
+  "previews": {
+    "combined": "forest_demo_map.png",
+    "ground": "forest_demo_ground.png",
+    "props": "forest_demo_props.png",
+    "combined_2x": "forest_demo_map_2x.png"
+  },
+  "notes": [
+    "This is a composition and autotile smoke-test map, not a finished game level.",
+    "Ground cell textures use deterministic random selection from four variants per material.",
+    "Tree and plant sprites are scaled 4x with nearest-neighbour filtering for the 64px ground grid.",
+    "The source props are Kenney Roguelike/RPG assets under CC0-1.0."
+  ]
+}
