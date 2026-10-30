@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A assets/source/kenney_roguelike/ assets/third_party/kenney_roguelike/ assets/tilesets/forest_ground/
+          git add -A assets/third_party/kenney_roguelike/ assets/tilesets/forest_ground/
           if git diff --cached --quiet; then
             echo "Generated assets are already up to date."
           else
