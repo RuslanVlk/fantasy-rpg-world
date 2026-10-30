@@ -48,5 +48,6 @@
   ],
   "generator_seed": 20261030,
   "tileable": true,
+  "texture_method": "multi-scale periodic value noise plus material-specific pixel clusters",
   "note": "Procedural base materials for iteration; not final hand-painted production art."
 }
