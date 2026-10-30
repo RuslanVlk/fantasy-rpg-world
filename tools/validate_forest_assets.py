@@ -126,6 +126,11 @@ def validate_forest_demo_map():
     demo = ROOT / "assets" / "maps" / "forest_demo"
     metadata = json.loads((demo / "forest_demo_map.json").read_text(encoding="utf-8"))
     assert metadata["format"] == "fantasy-rpg-forest-demo-v1"
+    import hashlib
+    generator_path = ROOT / "tools" / "generate_forest_demo_map.py"
+    expected_generator_hash = hashlib.sha256(generator_path.read_bytes()).hexdigest()
+    assert metadata.get("generator_script_sha256") == expected_generator_hash, (
+        "forest demo map is stale: regenerate it with the current map generator")
     grid = metadata["grid"]
     assert grid == {"width": 20, "height": 14, "tile_width": 64, "tile_height": 64}
     expected_size = (grid["width"] * 64, grid["height"] * 64)
