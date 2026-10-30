@@ -17,8 +17,26 @@ ROWS = 31
 UPSTREAM_BLOB_SHA = "32e606ca0596611d977d7ab5b29d6f2b23cfe212"
 
 def main():
+    target = OUT / "roguelikeSheet_transparent.png"
+    manifest_path = OUT / "manifest.json"
+
+    # The workflow removes the temporary base64 bootstrap file after the
+    # first successful import. Later rebuilds validate and reuse the committed
+    # CC0 source atlas instead of requiring the bootstrap payload again.
     if not SOURCE.exists():
-        raise FileNotFoundError(f"Missing temporary source file: {SOURCE}")
+        if not target.exists() or not manifest_path.exists():
+            raise FileNotFoundError("Neither temporary base64 source nor imported Kenney atlas exists.")
+        existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+        existing_image = Image.open(target).convert("RGBA")
+        if existing_image.size != EXPECTED_SIZE or existing.get("license") != "CC0-1.0":
+            raise ValueError("Existing Kenney source atlas failed provenance or dimension checks.")
+        preview_path = OUT / "roguelikeSheet_preview_3x.png"
+        if not preview_path.exists():
+            existing_image.resize((existing_image.width * 3, existing_image.height * 3),
+                                  Image.Resampling.NEAREST).save(preview_path, optimize=True)
+        print("Validated and reused committed Kenney CC0 source atlas.")
+        return
+
     encoded = "".join(SOURCE.read_text(encoding="ascii").split())
     raw = base64.b64decode(encoded, validate=True)
     image = Image.open(__import__("io").BytesIO(raw)).convert("RGBA")
@@ -26,7 +44,6 @@ def main():
         raise ValueError(f"Unexpected source sheet size {image.size}; expected {EXPECTED_SIZE}")
 
     OUT.mkdir(parents=True, exist_ok=True)
-    target = OUT / "roguelikeSheet_transparent.png"
     image.save(target, optimize=True)
 
     preview = image.resize((image.width * 3, image.height * 3), Image.Resampling.NEAREST)
