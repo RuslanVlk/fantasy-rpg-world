@@ -18,6 +18,8 @@ PLANTS = [
     ("flower_white_01", 25, 11, "small white flower cluster"),
     ("ground_cover_01", 26, 11, "small leafy ground-cover clump"),
     ("ground_cover_02", 28, 11, "small leafy ground-cover clump"),
+    ("berry_shrub_01", 24, 10, "small berry-bearing shrub"),
+    ("berry_shrub_02", 24, 11, "small berry-bearing shrub"),
 ]
 
 def main():
@@ -44,7 +46,7 @@ def main():
         previews.append((name, sprite))
 
     cell_w, cell_h = 80, 80
-    contact = Image.new("RGBA", (3 * cell_w, 2 * cell_h), (37, 43, 39, 255))
+    contact = Image.new("RGBA", (3 * cell_w, 3 * cell_h), (37, 43, 39, 255))
     draw = ImageDraw.Draw(contact)
     for index, (name, sprite) in enumerate(previews):
         col, row = index % 3, index // 3
@@ -52,7 +54,11 @@ def main():
         x = col * cell_w + (cell_w - 48) // 2
         y = row * cell_h + 20
         contact.alpha_composite(enlarged, (x, y))
-        draw.text((col * cell_w + 3, row * cell_h + 3), name, fill=(235, 235, 225, 255))
+        short_names = ["BLUE", "ORANGE", "PURPLE", "DAISY", "COVER1", "COVER2", "BERRY1", "BERRY2"]
+        draw.rectangle((col * cell_w, row * cell_h, (col + 1) * cell_w - 1, row * cell_h + 16),
+                       fill=(37, 43, 39, 255))
+        draw.text((col * cell_w + 3, row * cell_h + 3), short_names[index],
+                  fill=(235, 235, 225, 255))
     contact.save(OUT / "plants_contact_sheet.png", optimize=True)
 
     manifest = {
@@ -68,8 +74,8 @@ def main():
     (OUT / "plants.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     (OUT / "README.md").write_text(
         "# Forest plants and ground cover\n\n"
-        "Six separate transparent PNG sprites extracted from the Kenney Roguelike/RPG CC0 atlas: "
-        "four flower variants and two ground-cover clumps.\n\n"
+        "Eight separate transparent PNG sprites extracted from the Kenney Roguelike/RPG CC0 atlas: "
+        "four flower variants, two ground-cover clumps and two berry shrubs.\n\n"
         "Source cells and license are recorded in plants.json. Use the individual PNGs for map placement.\n",
         encoding="utf-8"
     )
