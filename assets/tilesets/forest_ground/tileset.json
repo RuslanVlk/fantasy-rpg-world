@@ -8,44 +8,94 @@
     {
       "id": 0,
       "name": "grass_deep",
-      "file": "grass_deep.png"
+      "file": "grass_deep.png",
+      "variants": [
+        "grass_deep.png",
+        "variants/grass_deep_v02.png",
+        "variants/grass_deep_v03.png",
+        "variants/grass_deep_v04.png"
+      ]
     },
     {
       "id": 1,
       "name": "grass_light",
-      "file": "grass_light.png"
+      "file": "grass_light.png",
+      "variants": [
+        "grass_light.png",
+        "variants/grass_light_v02.png",
+        "variants/grass_light_v03.png",
+        "variants/grass_light_v04.png"
+      ]
     },
     {
       "id": 2,
       "name": "dirt",
-      "file": "dirt.png"
+      "file": "dirt.png",
+      "variants": [
+        "dirt.png",
+        "variants/dirt_v02.png",
+        "variants/dirt_v03.png",
+        "variants/dirt_v04.png"
+      ]
     },
     {
       "id": 3,
       "name": "forest_path",
-      "file": "forest_path.png"
+      "file": "forest_path.png",
+      "variants": [
+        "forest_path.png",
+        "variants/forest_path_v02.png",
+        "variants/forest_path_v03.png",
+        "variants/forest_path_v04.png"
+      ]
     },
     {
       "id": 4,
       "name": "stone",
-      "file": "stone.png"
+      "file": "stone.png",
+      "variants": [
+        "stone.png",
+        "variants/stone_v02.png",
+        "variants/stone_v03.png",
+        "variants/stone_v04.png"
+      ]
     },
     {
       "id": 5,
       "name": "sand",
-      "file": "sand.png"
+      "file": "sand.png",
+      "variants": [
+        "sand.png",
+        "variants/sand_v02.png",
+        "variants/sand_v03.png",
+        "variants/sand_v04.png"
+      ]
     },
     {
       "id": 6,
       "name": "water",
-      "file": "water.png"
+      "file": "water.png",
+      "variants": [
+        "water.png",
+        "variants/water_v02.png",
+        "variants/water_v03.png",
+        "variants/water_v04.png"
+      ]
     },
     {
       "id": 7,
       "name": "mud",
-      "file": "mud.png"
+      "file": "mud.png",
+      "variants": [
+        "mud.png",
+        "variants/mud_v02.png",
+        "variants/mud_v03.png",
+        "variants/mud_v04.png"
+      ]
     }
   ],
+  "variants_per_material": 4,
+  "variants_atlas": "forest_ground_variants_atlas.png",
   "generator_seed": 20261030,
   "tileable": true,
   "texture_method": "multi-scale periodic value noise plus material-specific pixel clusters",
