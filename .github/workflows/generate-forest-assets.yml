@@ -4,20 +4,38 @@ on:
   push:
     paths:
       - "tools/generate_forest_tiles.py"
+      - "tools/generate_blob_masks.py"
+      - "tools/validate_forest_assets.py"
       - ".github/workflows/generate-forest-assets.yml"
 jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: python -m pip install Pillow
-      - run: python tools/generate_forest_tiles.py
+      - name: Generate ground materials
+        run: python tools/generate_forest_tiles.py
+      - name: Generate 47 blob transition masks
+        run: python tools/generate_blob_masks.py
+      - name: Validate dimensions, atlases and tile seams
+        run: python tools/validate_forest_assets.py
+      - name: Commit generated assets to the repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/tilesets/forest_ground/*.png assets/tilesets/forest_ground/*.json assets/tilesets/forest_ground/blob_masks/
+          if git diff --cached --quiet; then
+            echo "Generated assets are already up to date."
+          else
+            git commit -m "Generate validated forest ground and autotile assets"
+            git push
+          fi
       - uses: actions/upload-artifact@v4
         with:
-          name: forest-ground-tiles
+          name: forest-ground-and-autotile-assets
           path: assets/tilesets/forest_ground/
