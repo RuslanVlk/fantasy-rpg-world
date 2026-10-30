@@ -23,6 +23,8 @@ def validate_ground():
     assert len(metadata["materials"]) == len(MATERIALS) == 8
     atlas = Image.open(GROUND / "forest_ground_atlas.png").convert("RGBA")
     assert atlas.size == (4 * S, 2 * S)
+    repeat_preview = Image.open(GROUND / "forest_ground_repeat_preview.png").convert("RGBA")
+    assert repeat_preview.size == (12 * S, 6 * S)
     for index, name in enumerate(MATERIALS):
         tile = Image.open(GROUND / f"{name}.png").convert("RGBA")
         assert tile.size == (S, S), f"{name}: wrong dimensions"
@@ -30,6 +32,13 @@ def validate_ground():
         expected = atlas.crop(((index % 4) * S, (index // 4) * S,
                                (index % 4 + 1) * S, (index // 4 + 1) * S))
         assert ImageChops.difference(tile, expected).getbbox() is None, f"{name}: atlas mismatch"
+        repeated = repeat_preview.crop(((index % 4) * 3 * S, (index // 4) * 3 * S,
+                                        (index % 4 + 1) * 3 * S, (index // 4 + 1) * 3 * S))
+        for ry in range(3):
+            for rx in range(3):
+                cell = repeated.crop((rx * S, ry * S, (rx + 1) * S, (ry + 1) * S))
+                assert ImageChops.difference(tile, cell).getbbox() is None, (
+                    f"{name}: repeat preview cell {rx},{ry} mismatch")
 
         px = tile.convert("RGB").load()
         horizontal_seam = mean_delta([px[S - 1, y] for y in range(S)],
@@ -60,12 +69,14 @@ def validate_masks():
     assert entries[0]["neighbor_mask"] == 0
     atlas = Image.open(MASKS / "forest_blob_masks.png").convert("L")
     assert atlas.size == (8 * S, 6 * S)
+    blend_preview = Image.open(MASKS / "forest_blob_blend_preview.png").convert("RGBA")
+    assert blend_preview.size == (8 * S, 6 * S)
     for entry in entries:
         mask = Image.open(MASKS / entry["file"]).convert("L")
         assert mask.size == (S, S), f"{entry['file']}: wrong dimensions"
         if entry["neighbor_mask"] != 0:
             assert mask.getextrema()[1] > 0, f"{entry['file']}: unexpected empty nonzero mask"
-    print("PASS autotile masks: 47 valid neighbor configurations, 64x64 each")
+    print("PASS autotile masks: 47 valid neighbor configurations, mask atlas and blended preview")
 
 if __name__ == "__main__":
     validate_ground()
