@@ -4,7 +4,7 @@
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "source_atlas": "assets/third_party/kenney_roguelike/roguelikeSheet_transparent.png",
   "tile_size": 16,
-  "count": 6,
+  "count": 8,
   "sprites": [
     {
       "id": "flower_blue_01",
@@ -95,6 +95,36 @@
         }
       ],
       "source_description": "small leafy ground-cover clump"
+    },
+    {
+      "id": "berry_shrub_01",
+      "file": "berry_shrub_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 24
+        }
+      ],
+      "source_description": "small berry-bearing shrub"
+    },
+    {
+      "id": "berry_shrub_02",
+      "file": "berry_shrub_02.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 11,
+          "column": 24
+        }
+      ],
+      "source_description": "small berry-bearing shrub"
     }
   ],
   "note": "Separate native-resolution transparent PNGs; contact sheet is a preview."

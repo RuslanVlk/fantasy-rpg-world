@@ -10,7 +10,7 @@
     "rows": 31
   },
   "view": "3/4 RPG",
-  "count": 15,
+  "count": 14,
   "sprites": [
     {
       "id": "tree_small_01",
@@ -231,25 +231,6 @@
         {
           "row": 11,
           "column": 23
-        }
-      ],
-      "source_description": "two-cell fruit-bearing tree"
-    },
-    {
-      "id": "tree_fruit_02",
-      "file": "tree_fruit_02.png",
-      "size": [
-        16,
-        32
-      ],
-      "source_cells": [
-        {
-          "row": 10,
-          "column": 24
-        },
-        {
-          "row": 11,
-          "column": 24
         }
       ],
       "source_description": "two-cell fruit-bearing tree"
