@@ -42,15 +42,15 @@ def validate_forest_trees():
     tree_dir = ROOT / "assets" / "environment" / "forest" / "trees"
     metadata = json.loads((tree_dir / "trees.json").read_text(encoding="utf-8"))
     assert metadata["license"] == "CC0-1.0"
-    assert metadata["count"] == 12
-    assert len(metadata["sprites"]) == 12
+    assert metadata["count"] == 15
+    assert len(metadata["sprites"]) == 15
     for entry in metadata["sprites"]:
         sprite = Image.open(tree_dir / entry["file"]).convert("RGBA")
         assert list(sprite.size) == entry["size"], f"{entry['file']}: wrong dimensions"
         assert sprite.getchannel("A").getbbox() is not None, f"{entry['file']}: blank sprite"
     preview = Image.open(tree_dir / "trees_contact_sheet.png").convert("RGBA")
-    assert preview.size == (384, 160)
-    print("PASS forest trees: 6 small + 6 tall independent transparent sprites")
+    assert preview.size == (288, 448)
+    print("PASS forest trees: 6 small + 6 tall + 2 fruit + 1 dead tree sprites")
 
 def validate_ground():
     metadata = json.loads((GROUND / "tileset.json").read_text(encoding="utf-8"))
