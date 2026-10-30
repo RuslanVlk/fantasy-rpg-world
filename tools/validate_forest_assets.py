@@ -109,9 +109,14 @@ def validate_masks():
     for entry in entries:
         mask = Image.open(MASKS / entry["file"]).convert("L")
         assert mask.size == (S, S), f"{entry['file']}: wrong dimensions"
-        if entry["neighbor_mask"] != 0:
-            assert mask.getextrema()[1] > 0, f"{entry['file']}: unexpected empty nonzero mask"
-    print("PASS autotile masks: 47 valid neighbor configurations, mask atlas and blended preview")
+        assert mask.getextrema()[1] > 0, f"{entry['file']}: empty terrain body"
+        assert mask.getextrema()[0] == 0, f"{entry['file']}: fully transparent complement missing"
+        if entry["neighbor_mask"] == 0:
+            bbox = mask.getbbox()
+            assert bbox == (20, 20, 45, 45), f"isolated terrain blob has wrong bounds: {bbox}"
+        if entry["neighbor_mask"] == 255:
+            assert mask.getextrema() == (255, 255), "fully connected terrain mask must cover its whole cell"
+    print("PASS autotile masks: 47 connected terrain shapes, isolated body, and fully connected cell")
 
 if __name__ == "__main__":
     validate_kenney_source()
