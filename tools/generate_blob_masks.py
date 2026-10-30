@@ -39,10 +39,10 @@ def build_mask(value):
     # The center remains a connected terrain body even when surrounded by
     # base terrain. Cardinal neighbours extend that body to the tile edges.
     draw.ellipse((20, 20, 44, 44), fill=255)
-    if n: draw.rounded_rectangle((17, -16, 47, 39), radius=15, fill=255)
-    if e: draw.rounded_rectangle((25, 17, 80, 47), radius=15, fill=255)
-    if s: draw.rounded_rectangle((17, 25, 47, 80), radius=15, fill=255)
-    if w: draw.rounded_rectangle((-16, 17, 39, 47), radius=15, fill=255)
+    if n: draw.ellipse((15, -18, 49, 44), fill=255)
+    if e: draw.ellipse((20, 15, 82, 49), fill=255)
+    if s: draw.ellipse((15, 20, 49, 82), fill=255)
+    if w: draw.ellipse((-18, 15, 44, 49), fill=255)
 
     corners = (
         (ne, n and e, (64, 0)),
