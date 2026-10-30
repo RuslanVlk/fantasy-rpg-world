@@ -110,12 +110,14 @@ def validate_masks():
         mask = Image.open(MASKS / entry["file"]).convert("L")
         assert mask.size == (S, S), f"{entry['file']}: wrong dimensions"
         assert mask.getextrema()[1] > 0, f"{entry['file']}: empty terrain body"
-        assert mask.getextrema()[0] == 0, f"{entry['file']}: fully transparent complement missing"
         if entry["neighbor_mask"] == 0:
+            assert mask.getextrema()[0] == 0, "isolated mask must retain transparent outside"
             bbox = mask.getbbox()
             assert bbox == (20, 20, 45, 45), f"isolated terrain blob has wrong bounds: {bbox}"
-        if entry["neighbor_mask"] == 255:
+        elif entry["neighbor_mask"] == 255:
             assert mask.getextrema() == (255, 255), "fully connected terrain mask must cover its whole cell"
+        else:
+            assert mask.getextrema()[0] == 0, f"{entry['file']}: transparent terrain complement missing"
     print("PASS autotile masks: 47 connected terrain shapes, isolated body, and fully connected cell")
 
 if __name__ == "__main__":
