@@ -52,11 +52,13 @@ def main():
                    [{"row": 10, "column": column}, {"row": 11, "column": column}],
                    "two-cell vertically assembled tree")
 
-    for variant, column in enumerate((23, 24), start=1):
-        fruit_tree = compose_vertical(sheet, column, (10, 11))
-        add_sprite(entries, previews, f"tree_fruit_{variant:02d}", fruit_tree,
-                   [{"row": 10, "column": column}, {"row": 11, "column": column}],
-                   "two-cell fruit-bearing tree")
+    fruit_tree = compose_vertical(sheet, 23, (10, 11))
+    add_sprite(entries, previews, "tree_fruit_01", fruit_tree,
+               [{"row": 10, "column": 23}, {"row": 11, "column": 23}],
+               "two-cell fruit-bearing tree")
+    stale_bush = OUT / "tree_fruit_02.png"
+    if stale_bush.exists():
+        stale_bush.unlink()
 
     dead_tree = compose_vertical(sheet, 27, (9, 10, 11))
     add_sprite(entries, previews, "tree_dead_01", dead_tree,
@@ -79,7 +81,12 @@ def main():
         x = col * cell_w + (cell_w - preview.width) // 2
         y = row * cell_h + 14 + (90 - preview.height) // 2
         contact.alpha_composite(preview, (x, y))
-        draw.text((col * cell_w + 2, row * cell_h + 2), name, fill=(235, 235, 225, 255))
+        label = ("S" + name[-2:]) if "small" in name else (
+            ("T" + name[-2:]) if "tall" in name else (
+                "F01" if "fruit" in name else "DEAD"))
+        draw.rectangle((col * cell_w, row * cell_h, (col + 1) * cell_w - 1, row * cell_h + 12),
+                       fill=(37, 43, 39, 255))
+        draw.text((col * cell_w + 3, row * cell_h + 2), label, fill=(235, 235, 225, 255))
     contact.save(OUT / "trees_contact_sheet.png", optimize=True)
 
     manifest = {
@@ -96,8 +103,8 @@ def main():
     (OUT / "trees.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     (OUT / "README.md").write_text(
         "# Forest tree sprites\n\n"
-        "Fifteen separate transparent PNGs from the Kenney Roguelike/RPG CC0 atlas: "
-        "six small 16x16 trees, six tall 16x32 trees, two fruit trees and one 16x48 dead tree.\n\n"
+        "Fourteen separate transparent PNGs from the Kenney Roguelike/RPG CC0 atlas: "
+        "six small 16x16 trees, six tall 16x32 trees, one fruit tree and one 16x48 dead tree.\n\n"
         "Source cells and license are recorded in trees.json. The original atlas is preserved under "
         "assets/third_party/kenney_roguelike/.\n\n"
         "trees_contact_sheet.png is a review preview only. Import the individual PNG sprites for map placement.\n",
