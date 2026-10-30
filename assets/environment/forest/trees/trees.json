@@ -1,0 +1,221 @@
+{
+  "asset_pack": "Kenney Roguelike/RPG pack",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source_atlas": "assets/third_party/kenney_roguelike/roguelikeSheet_transparent.png",
+  "source_atlas_grid": {
+    "tile_size": 16,
+    "spacing": 1,
+    "columns": 57,
+    "rows": 31
+  },
+  "view": "3/4 RPG",
+  "count": 12,
+  "sprites": [
+    {
+      "id": "tree_small_01",
+      "file": "tree_small_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 13
+        }
+      ],
+      "source_description": "single-cell tree with canopy and trunk"
+    },
+    {
+      "id": "tree_tall_01",
+      "file": "tree_tall_01.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 13
+        },
+        {
+          "row": 11,
+          "column": 13
+        }
+      ],
+      "source_description": "two-cell vertically assembled tree"
+    },
+    {
+      "id": "tree_small_02",
+      "file": "tree_small_02.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 14
+        }
+      ],
+      "source_description": "single-cell tree with canopy and trunk"
+    },
+    {
+      "id": "tree_tall_02",
+      "file": "tree_tall_02.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 14
+        },
+        {
+          "row": 11,
+          "column": 14
+        }
+      ],
+      "source_description": "two-cell vertically assembled tree"
+    },
+    {
+      "id": "tree_small_03",
+      "file": "tree_small_03.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 15
+        }
+      ],
+      "source_description": "single-cell tree with canopy and trunk"
+    },
+    {
+      "id": "tree_tall_03",
+      "file": "tree_tall_03.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 15
+        },
+        {
+          "row": 11,
+          "column": 15
+        }
+      ],
+      "source_description": "two-cell vertically assembled tree"
+    },
+    {
+      "id": "tree_small_04",
+      "file": "tree_small_04.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 16
+        }
+      ],
+      "source_description": "single-cell tree with canopy and trunk"
+    },
+    {
+      "id": "tree_tall_04",
+      "file": "tree_tall_04.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 16
+        },
+        {
+          "row": 11,
+          "column": 16
+        }
+      ],
+      "source_description": "two-cell vertically assembled tree"
+    },
+    {
+      "id": "tree_small_05",
+      "file": "tree_small_05.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 17
+        }
+      ],
+      "source_description": "single-cell tree with canopy and trunk"
+    },
+    {
+      "id": "tree_tall_05",
+      "file": "tree_tall_05.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 17
+        },
+        {
+          "row": 11,
+          "column": 17
+        }
+      ],
+      "source_description": "two-cell vertically assembled tree"
+    },
+    {
+      "id": "tree_small_06",
+      "file": "tree_small_06.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 18
+        }
+      ],
+      "source_description": "single-cell tree with canopy and trunk"
+    },
+    {
+      "id": "tree_tall_06",
+      "file": "tree_tall_06.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 18
+        },
+        {
+          "row": 11,
+          "column": 18
+        }
+      ],
+      "source_description": "two-cell vertically assembled tree"
+    }
+  ],
+  "note": "Native-resolution transparent sprites extracted from CC0 source cells. Contact sheet is for preview; use the individual PNG files in maps."
+}
