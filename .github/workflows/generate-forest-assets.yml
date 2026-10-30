@@ -10,6 +10,7 @@ on:
       - "tools/import_kenney_sheet.py"
       - "tools/slice_kenney_sheet.py"
       - "tools/extract_kenney_forest_trees.py"
+      - "tools/extract_kenney_forest_plants.py"
       - "assets/source/kenney_roguelike/roguelikeSheet_transparent.png.b64"
       - "tools/generate_forest_tiles.py"
       - "tools/generate_blob_masks.py"
@@ -33,6 +34,8 @@ jobs:
         run: python tools/slice_kenney_sheet.py
       - name: Extract independent forest tree sprites
         run: python tools/extract_kenney_forest_trees.py
+      - name: Extract independent forest plant sprites
+        run: python tools/extract_kenney_forest_plants.py
       - name: Generate ground materials
         run: python tools/generate_forest_tiles.py
       - name: Generate 47 blob transition masks
