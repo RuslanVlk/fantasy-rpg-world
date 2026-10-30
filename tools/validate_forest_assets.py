@@ -11,9 +11,11 @@ MASKS = GROUND / "blob_masks"
 sys.path.insert(0, str(ROOT / "tools"))
 from generate_forest_tiles import MATERIALS, S
 
-def mean_rgb_delta(a, b):
-    pa, pb = list(a.convert("RGB").getdata()), list(b.convert("RGB").getdata())
-    return sum(sum(abs(x - y) for x, y in zip(ca, cb)) / 3 for ca, cb in zip(pa, pb)) / len(pa)
+def mean_delta(pixels_a, pixels_b):
+    count = len(pixels_a)
+    total = sum(sum(abs(a - b) for a, b in zip(ca, cb)) / 3
+                for ca, cb in zip(pixels_a, pixels_b))
+    return total / count
 
 def validate_ground():
     metadata = json.loads((GROUND / "tileset.json").read_text(encoding="utf-8"))
@@ -29,21 +31,23 @@ def validate_ground():
                                (index % 4 + 1) * S, (index // 4 + 1) * S))
         assert ImageChops.difference(tile, expected).getbbox() is None, f"{name}: atlas mismatch"
 
-        rgb = tile.convert("RGB")
-        horizontal_seam = mean_rgb_delta(rgb.crop((0, 0, 1, S)),
-                                         rgb.crop((S - 1, 0, S, S)))
-        horizontal_inner = mean_rgb_delta(rgb.crop((0, 0, 1, S)),
-                                          rgb.crop((1, 0, 2, S)))
-        vertical_seam = mean_rgb_delta(rgb.crop((0, 0, S, 1)),
-                                       rgb.crop((0, S - 1, S, S)))
-        vertical_inner = mean_rgb_delta(rgb.crop((0, 0, S, 1)),
-                                        rgb.crop((0, 1, S, 2)))
-        assert horizontal_seam <= horizontal_inner * 2.6 + 4, (
+        px = tile.convert("RGB").load()
+        horizontal_seam = mean_delta([px[S - 1, y] for y in range(S)],
+                                     [px[0, y] for y in range(S)])
+        horizontal_inner = mean_delta(
+            [px[x, y] for y in range(S) for x in range(S - 1)],
+            [px[x + 1, y] for y in range(S) for x in range(S - 1)])
+        vertical_seam = mean_delta([px[x, S - 1] for x in range(S)],
+                                   [px[x, 0] for x in range(S)])
+        vertical_inner = mean_delta(
+            [px[x, y] for x in range(S) for y in range(S - 1)],
+            [px[x, y + 1] for x in range(S) for y in range(S - 1)])
+        assert horizontal_seam <= horizontal_inner * 2.0 + 2, (
             f"{name}: horizontal seam discontinuity {horizontal_seam:.2f} "
-            f"vs internal {horizontal_inner:.2f}")
-        assert vertical_seam <= vertical_inner * 2.6 + 4, (
+            f"vs all internal edges {horizontal_inner:.2f}")
+        assert vertical_seam <= vertical_inner * 2.0 + 2, (
             f"{name}: vertical seam discontinuity {vertical_seam:.2f} "
-            f"vs internal {vertical_inner:.2f}")
+            f"vs all internal edges {vertical_inner:.2f}")
         print(f"PASS tile {name}: seam H={horizontal_seam:.2f}/{horizontal_inner:.2f}, "
               f"V={vertical_seam:.2f}/{vertical_inner:.2f}")
 
@@ -52,12 +56,15 @@ def validate_masks():
     assert metadata["layout"] == "47-tile-blob"
     entries = metadata["masks"]
     assert len(entries) == 47, f"expected 47 masks, found {len(entries)}"
+    assert len({entry["neighbor_mask"] for entry in entries}) == 47
+    assert entries[0]["neighbor_mask"] == 0
     atlas = Image.open(MASKS / "forest_blob_masks.png").convert("L")
     assert atlas.size == (8 * S, 6 * S)
     for entry in entries:
         mask = Image.open(MASKS / entry["file"]).convert("L")
         assert mask.size == (S, S), f"{entry['file']}: wrong dimensions"
-        assert mask.getextrema()[1] > 0, f"{entry['file']}: empty mask"
+        if entry["neighbor_mask"] != 0:
+            assert mask.getextrema()[1] > 0, f"{entry['file']}: unexpected empty nonzero mask"
     print("PASS autotile masks: 47 valid neighbor configurations, 64x64 each")
 
 if __name__ == "__main__":
