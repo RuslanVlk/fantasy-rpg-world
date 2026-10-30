@@ -69,8 +69,11 @@ def validate_ground():
     metadata = json.loads((GROUND / "tileset.json").read_text(encoding="utf-8"))
     assert metadata["tile_width"] == S and metadata["tile_height"] == S
     assert len(metadata["materials"]) == len(MATERIALS) == 8
+    assert metadata["variants_per_material"] == 4
     atlas = Image.open(GROUND / "forest_ground_atlas.png").convert("RGBA")
     assert atlas.size == (4 * S, 2 * S)
+    variants_atlas = Image.open(GROUND / "forest_ground_variants_atlas.png").convert("RGBA")
+    assert variants_atlas.size == (4 * S, 8 * S)
     repeat_preview = Image.open(GROUND / "forest_ground_repeat_preview.png").convert("RGBA")
     assert repeat_preview.size == (12 * S, 6 * S)
     for index, name in enumerate(MATERIALS):
@@ -80,6 +83,17 @@ def validate_ground():
         expected = atlas.crop(((index % 4) * S, (index // 4) * S,
                                (index % 4 + 1) * S, (index // 4 + 1) * S))
         assert ImageChops.difference(tile, expected).getbbox() is None, f"{name}: atlas mismatch"
+        record = metadata["materials"][index]
+        assert record["name"] == name and len(record["variants"]) == 4
+        for variant_index, relative_path in enumerate(record["variants"]):
+            variant = Image.open(GROUND / relative_path).convert("RGBA")
+            assert variant.size == (S, S), f"{relative_path}: wrong dimensions"
+            atlas_cell = variants_atlas.crop((variant_index * S, index * S,
+                                              (variant_index + 1) * S, (index + 1) * S))
+            assert ImageChops.difference(variant, atlas_cell).getbbox() is None, (
+                f"{relative_path}: variant atlas mismatch")
+            if variant_index:
+                assert variant.tobytes() != tile.tobytes(), f"{relative_path}: duplicate of base texture"
         repeated = repeat_preview.crop(((index % 4) * 3 * S, (index // 4) * 3 * S,
                                         (index % 4 + 1) * 3 * S, (index // 4 + 1) * 3 * S))
         for ry in range(3):
@@ -105,7 +119,7 @@ def validate_ground():
         assert vertical_seam <= vertical_inner * 2.0 + 2, (
             f"{name}: vertical seam discontinuity {vertical_seam:.2f} "
             f"vs all internal edges {vertical_inner:.2f}")
-        print(f"PASS tile {name}: seam H={horizontal_seam:.2f}/{horizontal_inner:.2f}, "
+        print(f"PASS tile {name} + 3 variants: seam H={horizontal_seam:.2f}/{horizontal_inner:.2f}, "
               f"V={vertical_seam:.2f}/{vertical_inner:.2f}")
 
 def validate_masks():
