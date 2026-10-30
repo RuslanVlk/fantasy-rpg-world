@@ -56,3 +56,4 @@ jobs:
           path: |
             assets/tilesets/forest_ground/
             assets/third_party/kenney_roguelike/
+            assets/environment/forest/
