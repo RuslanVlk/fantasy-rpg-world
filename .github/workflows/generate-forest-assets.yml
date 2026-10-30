@@ -13,6 +13,8 @@ on:
       - "tools/extract_kenney_forest_plants.py"
       - "assets/source/kenney_roguelike/roguelikeSheet_transparent.png.b64"
       - "tools/generate_forest_tiles.py"
+      - "tools/forest_autotile.py"
+      - "tools/generate_forest_demo_map.py"
       - "tools/generate_blob_masks.py"
       - "tools/validate_forest_assets.py"
       - ".github/workflows/generate-forest-assets.yml"
@@ -40,13 +42,15 @@ jobs:
         run: python tools/generate_forest_tiles.py
       - name: Generate 47 blob transition masks
         run: python tools/generate_blob_masks.py
+      - name: Render forest demo map
+        run: python tools/generate_forest_demo_map.py
       - name: Validate dimensions, atlases and tile seams
         run: python tools/validate_forest_assets.py
       - name: Commit generated assets to the repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A assets/third_party/kenney_roguelike/ assets/tilesets/forest_ground/ assets/environment/forest/
+          git add -A assets/third_party/kenney_roguelike/ assets/tilesets/forest_ground/ assets/environment/forest/ assets/maps/forest_demo/
           if git diff --cached --quiet; then
             echo "Generated assets are already up to date."
           else
@@ -61,3 +65,4 @@ jobs:
             assets/tilesets/forest_ground/
             assets/third_party/kenney_roguelike/
             assets/environment/forest/
+            assets/maps/forest_demo/
