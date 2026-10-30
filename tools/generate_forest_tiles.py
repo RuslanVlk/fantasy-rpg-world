@@ -80,7 +80,7 @@ def decorate(name, image, palette, seed):
             ((0, 2), (1, 1), (2, 1), (3, 0)),
             ((0, 1), (1, 0), (2, 1)),
         )
-        for _ in range(34):
+        for _ in range(20):
             put_pattern(image, rng.randrange(6, 54), rng.randrange(6, 54),
                         rng.choice(tufts), rng.choice((light, light, high, high, base)))
 
@@ -90,12 +90,12 @@ def decorate(name, image, palette, seed):
             ((0, 0), (1, 0), (2, 0), (1, 1)),
             ((0, 0), (0, 1), (1, 1), (2, 1)),
         )
-        for _ in range(32):
+        for _ in range(26):
             put_pattern(image, rng.randrange(6, 54), rng.randrange(6, 54),
                         rng.choice(pebbles), rng.choice((base, mid, high)))
 
     elif name == "forest_path":
-        for _ in range(23):
+        for _ in range(18):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (2, 0), (3, 0)),
                 ((0, 1), (1, 0), (2, 0)),
@@ -113,7 +113,7 @@ def decorate(name, image, palette, seed):
                         ((0, 0), (1, 0)), rng.choice((light, high)))
 
     elif name == "sand":
-        for _ in range(30):
+        for _ in range(24):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (2, 0)),
                 ((0, 0), (1, 0)),
@@ -123,7 +123,7 @@ def decorate(name, image, palette, seed):
                         pattern, rng.choice((mid, light, high)))
 
     elif name == "water":
-        for _ in range(21):
+        for _ in range(16):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (2, 0), (3, 0)),
                 ((0, 0), (1, 0), (2, 0)),
@@ -133,7 +133,7 @@ def decorate(name, image, palette, seed):
                         pattern, rng.choice((light, high)))
 
     elif name == "mud":
-        for _ in range(22):
+        for _ in range(18):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (0, 1), (1, 1)),
                 ((0, 0), (1, 0), (2, 0)),
@@ -147,13 +147,13 @@ def make_material(name, palette, seed):
         make_periodic_noise(grid, seed + index * 173)
         for index, grid in enumerate((4, 8, 16, 32))
     ]
-    weights = (.08, .24, .38, .30)
+    weights = (.38, .36, .20, .06)
     image = Image.new("RGBA", (S, S), (0, 0, 0, 255))
     for y in range(S):
         for x in range(S):
             noise = sum(weight * field(x, y)
                         for weight, field in zip(weights, fields))
-            value = max(0.0, min(1.0, .5 + noise * .38))
+            value = max(0.0, min(1.0, .5 + noise * .32))
             image.putpixel((x, y), (*tonal_color(value, palette), 255))
     decorate(name, image, palette, seed)
     return image
