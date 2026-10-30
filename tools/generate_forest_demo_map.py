@@ -149,11 +149,12 @@ def select_props(terrain_layers, rng):
 
     candidates = [
         (1, 1, "tree_tall_01"), (5, 1, "tree_tall_03"),
-        (9, 1, "tree_dead_01"), (14, 1, "tree_tall_06"),
+        (9, 2, "tree_dead_01"), (14, 1, "tree_tall_06"),
         (18, 1, "tree_tall_05"), (1, 8, "tree_small_02"),
         (6, 9, "tree_fruit_01"), (12, 9, "tree_tall_04"),
         (17, 8, "tree_small_05"), (4, 9, "tree_tall_02"),
         (10, 9, "tree_small_03"), (19, 8, "tree_small_01"),
+        (15, 9, "tree_small_04"), (11, 9, "tree_small_06"),
     ]
     selected_trees = []
     occupied = set()
