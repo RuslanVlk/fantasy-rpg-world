@@ -1,4 +1,8 @@
 name: Generate forest terrain assets
+
+concurrency:
+  group: forest-assets-${{ github.ref }}
+  cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
