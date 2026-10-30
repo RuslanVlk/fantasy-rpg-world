@@ -47,4 +47,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: forest-ground-and-autotile-assets
-          path: assets/tilesets/forest_ground/
+          path: |
+            assets/tilesets/forest_ground/
+            assets/third_party/kenney_roguelike/
