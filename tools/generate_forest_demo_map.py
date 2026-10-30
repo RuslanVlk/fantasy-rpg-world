@@ -21,8 +21,8 @@ SEED = 20261030
 
 def disk_cells(cx, cy, radius):
     result = set()
-    for y in range(max(0, cy - radius - 1), min(MAP_H, cy + radius + 2)):
-        for x in range(max(0, cx - radius - 1), min(MAP_W, cx + radius + 2)):
+    for y in range(max(0, math.floor(cy - radius)), min(MAP_H, math.ceil(cy + radius) + 1)):
+        for x in range(max(0, math.floor(cx - radius)), min(MAP_W, math.ceil(cx + radius) + 1)):
             if (x - cx) ** 2 + (y - cy) ** 2 <= radius ** 2:
                 result.add((x, y))
     return result
