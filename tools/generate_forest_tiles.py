@@ -1,91 +1,112 @@
 #!/usr/bin/env python3
-"""Generate the first editable 64x64 forest terrain tile pack.
+"""Generate seamless, editable 64px forest ground tiles and an atlas.
 
-All textures are generated deterministically with Pillow and the Python standard
-library. Each tile is exported separately as RGBA PNG plus a labeled-free atlas.
+Textures are deterministic and tileable: the noise field wraps on both axes,
+so adjacent copies do not create hard seams. This is a prototype material
+library; hand-authored transition masks and reference matching are later steps.
 """
 from pathlib import Path
+import math
 import random
 from PIL import Image, ImageDraw
 
-OUT = Path("assets/tilesets/forest_ground")
-SIZE = 64
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "assets" / "tilesets" / "forest_ground"
+S = 64
 SEED = 20261030
 
-PALETTES = {
-    "grass_deep": ((39, 75, 48), (57, 99, 57), (78, 119, 66), (105, 137, 76)),
-    "grass_light": ((58, 91, 49), (76, 116, 58), (101, 139, 69), (129, 151, 81)),
-    "dirt": ((83, 57, 39), (105, 72, 47), (127, 91, 57), (148, 111, 71)),
-    "forest_path": ((91, 67, 45), (116, 85, 55), (139, 106, 68), (158, 127, 83)),
-    "stone": ((75, 79, 75), (99, 103, 94), (126, 128, 113), (151, 149, 128)),
-    "sand": ((139, 119, 76), (164, 143, 91), (187, 164, 108), (207, 184, 128)),
-    "water": ((30, 70, 88), (37, 93, 111), (49, 117, 129), (76, 143, 145)),
-    "mud": ((67, 66, 47), (88, 83, 55), (111, 101, 64), (133, 119, 77)),
+# Dark base, midtone, light, highlight. Shared lighting: upper-left.
+MATERIALS = {
+    "grass_deep": ((34, 65, 43), (52, 91, 53), (75, 112, 62), (101, 132, 72)),
+    "grass_light": ((48, 79, 43), (69, 106, 53), (96, 130, 66), (125, 149, 82)),
+    "dirt": ((69, 48, 34), (96, 66, 43), (122, 88, 57), (147, 111, 73)),
+    "forest_path": ((78, 57, 39), (105, 77, 51), (133, 101, 67), (157, 125, 86)),
+    "stone": ((63, 68, 66), (88, 94, 88), (116, 119, 107), (145, 144, 126)),
+    "sand": ((124, 105, 68), (154, 133, 85), (181, 158, 104), (204, 181, 126)),
+    "water": ((24, 59, 77), (31, 82, 99), (43, 108, 119), (70, 135, 137)),
+    "mud": ((56, 57, 42), (79, 76, 51), (105, 97, 62), (130, 117, 77)),
 }
 
-def make_tile(name, palette, seed):
+def wrapped_noise(x, y, period, phase):
+    # Periodic harmonics ensure values and derivatives meet at tile boundaries.
+    a = math.sin(2*math.pi*x/period + phase)
+    b = math.cos(2*math.pi*y/period + phase*1.7)
+    c = math.sin(2*math.pi*(x+y)/(period*1.5) + phase*.7)
+    return (a*.36 + b*.34 + c*.30)
+
+def make_material(name, palette, seed):
     rng = random.Random(seed)
-    base, mid, light, highlight = palette
-    im = Image.new("RGBA", (SIZE, SIZE), (*base, 255))
-    d = ImageDraw.Draw(im)
-    # Broad irregular patches establish a natural, non-repeating ground texture.
-    for _ in range(18):
-        x, y = rng.randrange(-8, SIZE), rng.randrange(-8, SIZE)
-        w, h = rng.randrange(7, 22), rng.randrange(5, 15)
-        col = rng.choice([base, mid, mid, light])
-        d.ellipse((x, y, x+w, y+h), fill=(*col, 255))
-    # Pixel clusters, not isolated random noise.
-    for _ in range(125):
-        x, y = rng.randrange(2, SIZE-3), rng.randrange(2, SIZE-3)
-        col = rng.choices([base, mid, light, highlight], [2, 5, 3, 1])[0]
-        if rng.random() < 0.65:
-            d.rectangle((x, y, x+rng.choice([1, 2, 3]), y+rng.choice([1, 2])), fill=(*col, 255))
-        else:
-            d.point((x, y), fill=(*col, 255))
+    im = Image.new("RGBA", (S, S))
+    pix = im.load()
+    base, mid, light, high = palette
+    for y in range(S):
+        for x in range(S):
+            n = (wrapped_noise(x, y, 31, seed*.013) +
+                 .45*wrapped_noise(x, y, 13, seed*.021))
+            t = max(0.0, min(1.0, .48 + n*.34))
+            if t < .5:
+                q=t*2
+                c=tuple(round(base[k]*(1-q)+mid[k]*q) for k in range(3))
+            else:
+                q=(t-.5)*2
+                c=tuple(round(mid[k]*(1-q)+light[k]*q) for k in range(3))
+            pix[x,y]=(*c,255)
+
+    d=ImageDraw.Draw(im)
+    # Discrete clustered pixel details; coordinates wrap to preserve tiling.
+    for _ in range(110):
+        x,y=rng.randrange(S),rng.randrange(S)
+        c=rng.choices([base,mid,light,high],[2,5,3,1])[0]
+        w=rng.choice([1,2,2,3])
+        h=rng.choice([1,1,2])
+        for yy in range(h):
+            for xx in range(w):
+                im.putpixel(((x+xx)%S,(y+yy)%S),(*c,255))
+
     if name.startswith("grass"):
-        # Small tufts with a consistent upper-left light.
-        for _ in range(17):
-            x, y = rng.randrange(4, 60), rng.randrange(4, 60)
-            c = (*rng.choice([light, highlight]), 255)
-            d.line((x, y+3, x-1, y), fill=c, width=1)
-            d.point((x+2, y+1), fill=c)
-    elif name == "stone":
-        for _ in range(9):
-            x, y = rng.randrange(4, 54), rng.randrange(4, 54)
-            d.line((x, y, x+4, y-2), fill=(*highlight, 255), width=1)
-            d.point((x+5, y+1), fill=(*base, 255))
-    elif name == "water":
-        # Broken horizontal glints follow the diagonal 3/4 ground plane.
-        for _ in range(16):
-            x, y = rng.randrange(3, 52), rng.randrange(4, 60)
-            length = rng.randrange(3, 9)
-            d.line((x, y, min(62, x+length), y-1), fill=(*highlight, 210), width=1)
-            if rng.random() < .45:
-                d.point((x+1, y+1), fill=(*light, 255))
-    elif name in ("dirt", "forest_path", "mud", "sand"):
-        for _ in range(12):
-            x, y = rng.randrange(3, 60), rng.randrange(3, 60)
-            d.rectangle((x, y, x+2, y+1), fill=(*highlight, 255))
+        for _ in range(22):
+            x,y=rng.randrange(S),rng.randrange(S)
+            c=(*rng.choice([light,high]),255)
+            d.point((x,y),fill=c)
+            d.point(((x+1)%S,(y-1)%S),fill=c)
+            d.point(((x+2)%S,y),fill=c)
+    elif name=="water":
+        for _ in range(20):
+            x,y=rng.randrange(S),rng.randrange(S)
+            length=rng.randrange(3,8)
+            c=(*high,220)
+            for i in range(length):
+                im.putpixel(((x+i)%S,y),c)
+    elif name=="stone":
+        for _ in range(13):
+            x,y=rng.randrange(S),rng.randrange(S)
+            im.putpixel((x,y),(*high,255))
+            im.putpixel(((x+1)%S,y),(*light,255))
     return im
 
 def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    names = list(PALETTES)
-    tiles = []
-    for i, name in enumerate(names):
-        tile = make_tile(name, PALETTES[name], SEED+i*97)
-        tile.save(OUT / f"{name}.png", optimize=True)
+    OUT.mkdir(parents=True,exist_ok=True)
+    names=list(MATERIALS)
+    tiles=[]
+    for i,(name,palette) in enumerate(MATERIALS.items()):
+        tile=make_material(name,palette,SEED+i*101)
+        tile.save(OUT/f"{name}.png",optimize=True)
         tiles.append(tile)
-    cols, rows = 4, (len(tiles)+3)//4
-    atlas = Image.new("RGBA", (cols*SIZE, rows*SIZE), (0, 0, 0, 0))
-    for i, tile in enumerate(tiles):
-        atlas.alpha_composite(tile, ((i%cols)*SIZE, (i//cols)*SIZE))
-    atlas.save(OUT / "forest_ground_atlas.png", optimize=True)
-    (OUT / "tileset.json").write_text(
-        '{\n  "tile_size": 64,\n  "columns": 4,\n  "tiles": '+str(names).replace("'", '"')+
-        ',\n  "projection": "diagonal 3/4",\n  "generated_by": "tools/generate_forest_tiles.py"\n}\n',
-        encoding="utf-8")
-    print(f"Generated {len(tiles)} separate tiles and atlas in {OUT}")
+    cols=4
+    rows=(len(tiles)+cols-1)//cols
+    atlas=Image.new("RGBA",(cols*S,rows*S),(0,0,0,0))
+    for i,tile in enumerate(tiles):
+        atlas.alpha_composite(tile,((i%cols)*S,(i//cols)*S))
+    atlas.save(OUT/"forest_ground_atlas.png",optimize=True)
+    import json
+    metadata={
+        "tile_width":S,"tile_height":S,"atlas_columns":cols,
+        "atlas_rows":rows,"projection":"diagonal 3/4",
+        "materials":[{"id":i,"name":n,"file":f"{n}.png"} for i,n in enumerate(names)],
+        "note":"Seamless prototype textures; not final hand-painted production art."
+    }
+    (OUT/"tileset.json").write_text(json.dumps(metadata,indent=2)+"\n",encoding="utf-8")
+    print(f"OK: {len(tiles)} seamless tiles + atlas -> {OUT}")
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
