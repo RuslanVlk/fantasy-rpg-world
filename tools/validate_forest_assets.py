@@ -17,6 +17,19 @@ def mean_delta(pixels_a, pixels_b):
                 for ca, cb in zip(pixels_a, pixels_b))
     return total / count
 
+def validate_kenney_source():
+    source = ROOT / "assets" / "third_party" / "kenney_roguelike"
+    image = Image.open(source / "roguelikeSheet_transparent.png").convert("RGBA")
+    assert image.size == (968, 526), f"Kenney source sheet has unexpected dimensions: {image.size}"
+    preview = Image.open(source / "roguelikeSheet_preview_3x.png").convert("RGBA")
+    assert preview.size == (2904, 1578)
+    manifest = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["license"] == "CC0-1.0"
+    assert manifest["tile_size"] == 16 and manifest["spacing"] == 1
+    assert len(manifest["occupied_cells"]) > 100
+    assert (source / "CREDITS.md").exists()
+    print(f"PASS Kenney CC0 source: {len(manifest['occupied_cells'])} occupied 16x16 cells")
+
 def validate_ground():
     metadata = json.loads((GROUND / "tileset.json").read_text(encoding="utf-8"))
     assert metadata["tile_width"] == S and metadata["tile_height"] == S
@@ -79,6 +92,7 @@ def validate_masks():
     print("PASS autotile masks: 47 valid neighbor configurations, mask atlas and blended preview")
 
 if __name__ == "__main__":
+    validate_kenney_source()
     validate_ground()
     validate_masks()
     print("ALL FOREST ASSET CHECKS PASSED")
