@@ -28,7 +28,15 @@ def validate_kenney_source():
     assert manifest["tile_size"] == 16 and manifest["spacing"] == 1
     assert len(manifest["occupied_cells"]) > 100
     assert (source / "CREDITS.md").exists()
-    print(f"PASS Kenney CC0 source: {len(manifest['occupied_cells'])} occupied 16x16 cells")
+    catalog = json.loads((source / "tile_catalog.json").read_text(encoding="utf-8"))
+    tile_dir = source / "tile_cells"
+    tile_files = list(tile_dir.glob("*.png"))
+    assert catalog["count"] == len(manifest["occupied_cells"]) == len(tile_files)
+    for entry in catalog["tiles"]:
+        tile = Image.open(source / entry["file"]).convert("RGBA")
+        assert tile.size == (16, 16), f"{entry['file']}: wrong dimensions"
+        assert tile.getchannel("A").getbbox() is not None, f"{entry['file']}: blank tile"
+    print(f"PASS Kenney CC0 source: {catalog['count']} independent 16x16 PNG cells")
 
 def validate_ground():
     metadata = json.loads((GROUND / "tileset.json").read_text(encoding="utf-8"))
