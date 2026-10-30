@@ -42,28 +42,28 @@ def validate_forest_trees():
     tree_dir = ROOT / "assets" / "environment" / "forest" / "trees"
     metadata = json.loads((tree_dir / "trees.json").read_text(encoding="utf-8"))
     assert metadata["license"] == "CC0-1.0"
-    assert metadata["count"] == 15
-    assert len(metadata["sprites"]) == 15
+    assert metadata["count"] == 14
+    assert len(metadata["sprites"]) == 14
     for entry in metadata["sprites"]:
         sprite = Image.open(tree_dir / entry["file"]).convert("RGBA")
         assert list(sprite.size) == entry["size"], f"{entry['file']}: wrong dimensions"
         assert sprite.getchannel("A").getbbox() is not None, f"{entry['file']}: blank sprite"
     preview = Image.open(tree_dir / "trees_contact_sheet.png").convert("RGBA")
     assert preview.size == (288, 448)
-    print("PASS forest trees: 6 small + 6 tall + 2 fruit + 1 dead tree sprites")
+    print("PASS forest trees: 6 small + 6 tall + 1 fruit + 1 dead tree sprites")
 
 def validate_forest_plants():
     plant_dir = ROOT / "assets" / "environment" / "forest" / "plants"
     metadata = json.loads((plant_dir / "plants.json").read_text(encoding="utf-8"))
     assert metadata["license"] == "CC0-1.0"
-    assert metadata["count"] == 6 and len(metadata["sprites"]) == 6
+    assert metadata["count"] == 8 and len(metadata["sprites"]) == 8
     for entry in metadata["sprites"]:
         sprite = Image.open(plant_dir / entry["file"]).convert("RGBA")
         assert sprite.size == (16, 16), f"{entry['file']}: wrong dimensions"
         assert sprite.getchannel("A").getbbox() is not None, f"{entry['file']}: blank sprite"
     preview = Image.open(plant_dir / "plants_contact_sheet.png").convert("RGBA")
-    assert preview.size == (240, 160)
-    print("PASS forest plants: 4 flower variants + 2 ground-cover sprites")
+    assert preview.size == (240, 240)
+    print("PASS forest plants: 4 flower variants + 2 ground-cover + 2 berry shrubs")
 
 def validate_ground():
     metadata = json.loads((GROUND / "tileset.json").read_text(encoding="utf-8"))
