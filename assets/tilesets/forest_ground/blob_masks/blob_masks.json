@@ -18,6 +18,7 @@
   },
   "diagonal_rule": "A diagonal flag is valid only when both adjacent cardinal flags are set.",
   "edge_depth_pixels": 10,
+  "blend_preview": "forest_blob_blend_preview.png",
   "masks": [
     {
       "index": 0,

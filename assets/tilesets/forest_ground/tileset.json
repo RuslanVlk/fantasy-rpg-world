@@ -49,5 +49,6 @@
   "generator_seed": 20261030,
   "tileable": true,
   "texture_method": "multi-scale periodic value noise plus material-specific pixel clusters",
+  "repeat_preview": "forest_ground_repeat_preview.png",
   "note": "Procedural base materials for iteration; not final hand-painted production art."
 }
