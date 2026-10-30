@@ -142,7 +142,7 @@ def load_props():
     return trees, plants
 
 def select_props(terrain_layers, rng):
-    blocked = set().union(*terrain_layers.values())
+    blocked = terrain_layers["sand"] | terrain_layers["water"] | terrain_layers["forest_path"]
     tree_manifest, plant_manifest = load_props()
     tree_records = {item["id"]: item for item in tree_manifest}
     plant_records = {item["id"]: item for item in plant_manifest}
