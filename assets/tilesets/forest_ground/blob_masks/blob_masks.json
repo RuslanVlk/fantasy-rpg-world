@@ -17,7 +17,6 @@
     "NW": 128
   },
   "diagonal_rule": "A diagonal flag is valid only when both adjacent cardinal flags are set.",
-  "edge_depth_pixels": 10,
   "blend_preview": "forest_blob_blend_preview.png",
   "masks": [
     {
@@ -537,5 +536,5 @@
       ]
     }
   ],
-  "note": "Generic alpha templates; the game map renderer must select a mask from the 8-neighbour terrain pattern."
+  "note": "Connected mask templates. For a cell assigned overlay terrain A, set bits for its adjacent A cells and composite A over base B using the selected mask."
 }
