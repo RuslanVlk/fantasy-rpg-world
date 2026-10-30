@@ -4,7 +4,7 @@ from pathlib import Path
 import itertools
 import json
 import math
-from PIL import Image
+from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "tilesets" / "forest_ground" / "blob_masks"
@@ -35,94 +35,40 @@ def valid_masks():
             results.append(value)
     return sorted(results)
 
-def edge_depth(t, offset):
-    wave = (math.sin(2 * math.pi * (t + offset) / S) * 1.5 +
-            math.sin(4 * math.pi * (t + offset * 2) / S) * .8)
-    return 10 + round(wave)
-
 def build_mask(value):
     image = Image.new("L", (S, S), 0)
-    px = image.load()
+    draw = ImageDraw.Draw(image)
+
     north, east, south, west = (bool(value & CARDINALS[k]) for k in ("N", "E", "S", "W"))
     ne, se, sw, nw = (bool(value & DIAGONALS[k]) for k in ("NE", "SE", "SW", "NW"))
 
-    for y in range(S):
-        for x in range(S):
-            covered = (
-                (north and y < edge_depth(x, 0)) or
-                (east and x >= S - edge_depth(y, 9)) or
-                (south and y >= S - edge_depth(x, 17)) or
-                (west and x < edge_depth(y, 25))
-            )
+    # Every cell has a central body. Connected cardinal neighbours extend it
+    # to the corresponding edge through broad rounded necks.
+    draw.ellipse((20, 20, 44, 44), fill=255)
+    if north:
+        draw.rounded_rectangle((17, -16, 47, 39), radius=15, fill=255)
+    if east:
+        draw.rounded_rectangle((25, 17, 80, 47), radius=15, fill=255)
+    if south:
+        draw.rounded_rectangle((17, 25, 47, 80), radius=15, fill=255)
+    if west:
+        draw.rounded_rectangle((-16, 17, 39, 47), radius=15, fill=255)
 
-            # Diagonal neighbours add a rounded lobe. Missing diagonals where
-            # both adjacent sides exist create a concave cut rather than a square.
-            corners = (
-                ("NE", ne, north and east, x >= S - 20 and y < 20, S - x, y),
-                ("SE", se, east and south, x >= S - 20 and y >= S - 20, S - x, S - y),
-                ("SW", sw, south and west, x < 20 and y >= S - 20, x, S - y),
-                ("NW", nw, west and north, x < 20 and y < 20, x, y),
-            )
-            for _, diagonal, both_sides, in_zone, dx, dy in corners:
-                if both_sides and in_zone:
-                    distance_sq = dx * dx + dy * dy
-                    if diagonal and distance_sq <= 20 * 20:
-                        covered = True
-                    elif not diagonal and distance_sq <= 8 * 8:
-                        covered = False
+    # A valid diagonal fills the outside corner. When both cardinals connect
+    # but the diagonal does not, an inward bite creates a concave inner corner.
+    corners = (
+        ("NE", ne, north and east, (64, 0)),
+        ("SE", se, east and south, (64, 64)),
+        ("SW", sw, south and west, (0, 64)),
+        ("NW", nw, west and north, (0, 0)),
+    )
+    for name, diagonal, both_sides, (cx, cy) in corners:
+        if not both_sides:
+            continue
+        if diagonal:
+            draw.ellipse((cx - 23, cy - 23, cx + 23, cy + 23), fill=255)
+        else:
+            draw.ellipse((cx - 12, cy - 12, cx + 12, cy + 12), fill=0)
 
-            px[x, y] = 255 if covered else 0
     return image
 
-def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    values = valid_masks()
-    columns, rows = 8, 6
-    atlas = Image.new("L", (columns * S, rows * S), 0)
-    entries = []
-    for index, value in enumerate(values):
-        filename = f"mask_{value:03d}.png"
-        image = build_mask(value)
-        image.save(OUT / filename, optimize=True)
-        atlas.paste(image, ((index % columns) * S, (index // columns) * S))
-        entries.append({
-            "index": index,
-            "neighbor_mask": value,
-            "file": filename,
-            "neighbors": [name for name, bit in ALL_BITS.items() if value & bit],
-        })
-    atlas.save(OUT / "forest_blob_masks.png", optimize=True)
-
-    # Visual integration check: white mask areas select grass, black areas
-    # leave the dirt base visible. This is a preview, not a terrain atlas.
-    grass = Image.open(ROOT / "assets" / "tilesets" / "forest_ground" / "grass_deep.png").convert("RGBA")
-    dirt = Image.open(ROOT / "assets" / "tilesets" / "forest_ground" / "dirt.png").convert("RGBA")
-    blend_preview = Image.new("RGBA", (columns * S, rows * S), (0, 0, 0, 0))
-    for index, value in enumerate(values):
-        mask = Image.open(OUT / f"mask_{value:03d}.png").convert("L")
-        blend_preview.alpha_composite(
-            Image.composite(grass, dirt, mask),
-            ((index % columns) * S, (index // columns) * S)
-        )
-    blend_preview.save(OUT / "forest_blob_blend_preview.png", optimize=True)
-
-    metadata = {
-        "layout": "47-tile-blob",
-        "tile_width": S,
-        "tile_height": S,
-        "atlas_columns": columns,
-        "atlas_rows": rows,
-        "white": "overlay terrain A",
-        "black": "leave base terrain B visible",
-        "bit_flags": ALL_BITS,
-        "diagonal_rule": "A diagonal flag is valid only when both adjacent cardinal flags are set.",
-        "edge_depth_pixels": 10,
-        "blend_preview": "forest_blob_blend_preview.png",
-        "masks": entries,
-        "note": "Generic alpha templates; the game map renderer must select a mask from the 8-neighbour terrain pattern."
-    }
-    (OUT / "blob_masks.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
-    print(f"Generated {len(entries)} valid blob masks in {OUT}")
-
-if __name__ == "__main__":
-    main()
