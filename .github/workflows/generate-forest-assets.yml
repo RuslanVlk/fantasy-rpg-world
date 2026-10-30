@@ -2,7 +2,7 @@ name: Generate forest terrain assets
 
 concurrency:
   group: forest-assets-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 on:
   workflow_dispatch:
   push:
@@ -51,7 +51,8 @@ jobs:
             echo "Generated assets are already up to date."
           else
             git commit -m "Generate validated forest ground and autotile assets"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
       - uses: actions/upload-artifact@v4
         with:
