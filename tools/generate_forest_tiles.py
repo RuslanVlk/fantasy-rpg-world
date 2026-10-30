@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Generate seamless, editable 64px forest ground tiles and an atlas.
+"""Generate a deterministic 64px forest ground material prototype.
 
-Textures are deterministic and tileable: the noise field wraps on both axes,
-so adjacent copies do not create hard seams. This is a prototype material
-library; hand-authored transition masks and reference matching are later steps.
+Every tonal field uses integer-frequency Fourier harmonics with a 64px period.
+Decorative clusters stay away from borders so repeated tiles do not expose
+randomly cut details at their joins. This is a base material pack, not final
+hand-painted environment art.
 """
 from pathlib import Path
 import math
 import random
+import json
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,98 +17,164 @@ OUT = ROOT / "assets" / "tilesets" / "forest_ground"
 S = 64
 SEED = 20261030
 
-# Dark base, midtone, light, highlight. Shared lighting: upper-left.
 MATERIALS = {
-    "grass_deep": ((34, 65, 43), (52, 91, 53), (75, 112, 62), (101, 132, 72)),
-    "grass_light": ((48, 79, 43), (69, 106, 53), (96, 130, 66), (125, 149, 82)),
-    "dirt": ((69, 48, 34), (96, 66, 43), (122, 88, 57), (147, 111, 73)),
-    "forest_path": ((78, 57, 39), (105, 77, 51), (133, 101, 67), (157, 125, 86)),
-    "stone": ((63, 68, 66), (88, 94, 88), (116, 119, 107), (145, 144, 126)),
-    "sand": ((124, 105, 68), (154, 133, 85), (181, 158, 104), (204, 181, 126)),
-    "water": ((24, 59, 77), (31, 82, 99), (43, 108, 119), (70, 135, 137)),
-    "mud": ((56, 57, 42), (79, 76, 51), (105, 97, 62), (130, 117, 77)),
+    "grass_deep": ((32, 59, 39), (49, 82, 48), (76, 108, 59), (107, 137, 76)),
+    "grass_light": ((43, 70, 39), (65, 98, 49), (94, 126, 65), (127, 151, 85)),
+    "dirt": ((66, 45, 32), (91, 61, 41), (119, 84, 55), (151, 111, 76)),
+    "forest_path": ((72, 52, 37), (101, 73, 49), (130, 98, 67), (158, 126, 88)),
+    "stone": ((59, 64, 62), (83, 88, 83), (113, 115, 104), (148, 146, 127)),
+    "sand": ((119, 101, 66), (150, 130, 84), (181, 158, 106), (210, 188, 134)),
+    "water": ((20, 53, 72), (27, 76, 94), (40, 105, 119), (75, 143, 148)),
+    "mud": ((51, 52, 39), (75, 72, 49), (105, 96, 62), (136, 122, 81)),
 }
 
-def wrapped_noise(x, y, period, phase):
-    # Periodic harmonics ensure values and derivatives meet at tile boundaries.
-    a = math.sin(2*math.pi*x/period + phase)
-    b = math.cos(2*math.pi*y/period + phase*1.7)
-    c = math.sin(2*math.pi*(x+y)/(period*1.5) + phase*.7)
-    return (a*.36 + b*.34 + c*.30)
+# Integer frequency pairs make the sampled field periodic at exactly 64px.
+HARMONICS = (
+    (1, 0, .22), (0, 1, .19), (1, 1, .17), (2, -1, .14),
+    (1, 2, .11), (2, 1, .09), (3, 0, .07), (0, 3, .07),
+)
 
-def make_material(name, palette, seed):
-    rng = random.Random(seed)
-    im = Image.new("RGBA", (S, S))
-    pix = im.load()
+def periodic_noise(x, y, seed):
+    total = 0.0
+    weight = 0.0
+    phase_base = seed * .017
+    for i, (kx, ky, amplitude) in enumerate(HARMONICS):
+        phase = phase_base * (i + 1)
+        angle = 2 * math.pi * (kx * x + ky * y) / S + phase
+        total += math.sin(angle) * amplitude
+        weight += amplitude
+    return total / weight
+
+def tonal_color(value, palette):
+    # Four deliberately limited colors keep the material in a pixel-art range.
+    if value < .31:
+        return palette[0]
+    if value < .54:
+        return palette[1]
+    if value < .78:
+        return palette[2]
+    return palette[3]
+
+def put_pattern(image, x, y, pattern, color):
+    # Keep all authored marks inside a safe border; only the periodic field
+    # reaches the tile boundary.
+    for dx, dy in pattern:
+        px, py = x + dx, y + dy
+        if 3 <= px < S - 3 and 3 <= py < S - 3:
+            image.putpixel((px, py), (*color, 255))
+
+def decorate(name, image, palette, seed):
+    rng = random.Random(seed ^ 0x5A17)
     base, mid, light, high = palette
-    for y in range(S):
-        for x in range(S):
-            n = (wrapped_noise(x, y, 31, seed*.013) +
-                 .45*wrapped_noise(x, y, 13, seed*.021))
-            t = max(0.0, min(1.0, .48 + n*.34))
-            if t < .5:
-                q=t*2
-                c=tuple(round(base[k]*(1-q)+mid[k]*q) for k in range(3))
-            else:
-                q=(t-.5)*2
-                c=tuple(round(mid[k]*(1-q)+light[k]*q) for k in range(3))
-            pix[x,y]=(*c,255)
-
-    d=ImageDraw.Draw(im)
-    # Discrete clustered pixel details; coordinates wrap to preserve tiling.
-    for _ in range(110):
-        x,y=rng.randrange(S),rng.randrange(S)
-        c=rng.choices([base,mid,light,high],[2,5,3,1])[0]
-        w=rng.choice([1,2,2,3])
-        h=rng.choice([1,1,2])
-        for yy in range(h):
-            for xx in range(w):
-                im.putpixel(((x+xx)%S,(y+yy)%S),(*c,255))
 
     if name.startswith("grass"):
-        for _ in range(22):
-            x,y=rng.randrange(S),rng.randrange(S)
-            c=(*rng.choice([light,high]),255)
-            d.point((x,y),fill=c)
-            d.point(((x+1)%S,(y-1)%S),fill=c)
-            d.point(((x+2)%S,y),fill=c)
-    elif name=="water":
-        for _ in range(20):
-            x,y=rng.randrange(S),rng.randrange(S)
-            length=rng.randrange(3,8)
-            c=(*high,220)
-            for i in range(length):
-                im.putpixel(((x+i)%S,y),c)
-    elif name=="stone":
+        tufts = [
+            ((0, 2), (1, 1), (2, 0), (2, 2)),
+            ((0, 1), (1, 0), (1, 2), (2, 1)),
+            ((0, 2), (1, 1), (2, 1), (3, 0)),
+            ((0, 1), (1, 0), (2, 1)),
+        ]
+        for _ in range(24):
+            put_pattern(image, rng.randrange(5, 55), rng.randrange(5, 55),
+                        rng.choice(tufts), rng.choice((light, light, high, base)))
+
+    elif name == "dirt":
+        pebbles = [
+            ((0, 0), (1, 0), (0, 1)),
+            ((0, 0), (1, 0), (2, 0), (1, 1)),
+            ((0, 0), (0, 1), (1, 1), (2, 1)),
+        ]
+        for _ in range(25):
+            put_pattern(image, rng.randrange(5, 55), rng.randrange(5, 55),
+                        rng.choice(pebbles), rng.choice((base, mid, high)))
+
+    elif name == "forest_path":
+        for _ in range(19):
+            x, y = rng.randrange(5, 54), rng.randrange(5, 54)
+            pattern = rng.choice((
+                ((0, 0), (1, 0), (2, 0), (3, 0)),
+                ((0, 1), (1, 0), (2, 0)),
+                ((0, 0), (1, 0), (1, 1), (2, 1)),
+            ))
+            put_pattern(image, x, y, pattern, rng.choice((base, mid, light)))
+
+    elif name == "stone":
         for _ in range(13):
-            x,y=rng.randrange(S),rng.randrange(S)
-            im.putpixel((x,y),(*high,255))
-            im.putpixel(((x+1)%S,y),(*light,255))
-    return im
+            x, y = rng.randrange(6, 53), rng.randrange(6, 53)
+            put_pattern(image, x, y, ((0, 0), (1, 0), (1, 1), (2, 1)),
+                        rng.choice((base, mid)))
+        for _ in range(11):
+            put_pattern(image, rng.randrange(5, 55), rng.randrange(5, 55),
+                        ((0, 0), (1, 0)), rng.choice((light, high)))
+
+    elif name == "sand":
+        for _ in range(28):
+            x, y = rng.randrange(5, 55), rng.randrange(5, 55)
+            put_pattern(image, x, y,
+                        rng.choice((((0, 0), (1, 0), (2, 0)),
+                                    ((0, 0), (1, 0)),
+                                    ((0, 1), (1, 0), (2, 0)))),
+                        rng.choice((mid, light, high)))
+
+    elif name == "water":
+        for _ in range(17):
+            x, y = rng.randrange(5, 52), rng.randrange(5, 55)
+            put_pattern(image, x, y,
+                        rng.choice((((0, 0), (1, 0), (2, 0), (3, 0)),
+                                    ((0, 0), (1, 0), (2, 0)),
+                                    ((0, 1), (1, 0), (2, 0)))),
+                        rng.choice((light, high)))
+
+    elif name == "mud":
+        for _ in range(20):
+            x, y = rng.randrange(5, 55), rng.randrange(5, 55)
+            put_pattern(image, x, y,
+                        rng.choice((((0, 0), (1, 0), (0, 1), (1, 1)),
+                                    ((0, 0), (1, 0), (2, 0)),
+                                    ((0, 0), (0, 1), (1, 1)))),
+                        rng.choice((base, mid, light)))
+
+def make_material(name, palette, seed):
+    image = Image.new("RGBA", (S, S), (0, 0, 0, 255))
+    for y in range(S):
+        for x in range(S):
+            value = max(0.0, min(1.0, .5 + periodic_noise(x, y, seed) * .47))
+            image.putpixel((x, y), (*tonal_color(value, palette), 255))
+    decorate(name, image, palette, seed)
+    return image
 
 def main():
-    OUT.mkdir(parents=True,exist_ok=True)
-    names=list(MATERIALS)
-    tiles=[]
-    for i,(name,palette) in enumerate(MATERIALS.items()):
-        tile=make_material(name,palette,SEED+i*101)
-        tile.save(OUT/f"{name}.png",optimize=True)
+    OUT.mkdir(parents=True, exist_ok=True)
+    names = list(MATERIALS)
+    tiles = []
+    for index, (name, palette) in enumerate(MATERIALS.items()):
+        tile = make_material(name, palette, SEED + index * 101)
+        tile.save(OUT / f"{name}.png", optimize=True)
         tiles.append(tile)
-    cols=4
-    rows=(len(tiles)+cols-1)//cols
-    atlas=Image.new("RGBA",(cols*S,rows*S),(0,0,0,0))
-    for i,tile in enumerate(tiles):
-        atlas.alpha_composite(tile,((i%cols)*S,(i//cols)*S))
-    atlas.save(OUT/"forest_ground_atlas.png",optimize=True)
-    import json
-    metadata={
-        "tile_width":S,"tile_height":S,"atlas_columns":cols,
-        "atlas_rows":rows,"projection":"diagonal 3/4",
-        "materials":[{"id":i,"name":n,"file":f"{n}.png"} for i,n in enumerate(names)],
-        "note":"Seamless prototype textures; not final hand-painted production art."
-    }
-    (OUT/"tileset.json").write_text(json.dumps(metadata,indent=2)+"\n",encoding="utf-8")
-    print(f"OK: {len(tiles)} seamless tiles + atlas -> {OUT}")
 
-if __name__=="__main__":
+    columns = 4
+    rows = (len(tiles) + columns - 1) // columns
+    atlas = Image.new("RGBA", (columns * S, rows * S), (0, 0, 0, 0))
+    for index, tile in enumerate(tiles):
+        atlas.alpha_composite(tile, ((index % columns) * S, (index // columns) * S))
+    atlas.save(OUT / "forest_ground_atlas.png", optimize=True)
+
+    metadata = {
+        "tile_width": S,
+        "tile_height": S,
+        "atlas_columns": columns,
+        "atlas_rows": rows,
+        "projection": "diagonal 3/4",
+        "materials": [
+            {"id": index, "name": name, "file": f"{name}.png"}
+            for index, name in enumerate(names)
+        ],
+        "generator_seed": SEED,
+        "tileable": True,
+        "note": "Procedural base materials for iteration; not final hand-painted production art."
+    }
+    (OUT / "tileset.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+    print(f"Generated {len(tiles)} 64x64 materials and a {columns}x{rows} atlas in {OUT}")
+
+if __name__ == "__main__":
     main()
