@@ -9,6 +9,7 @@ on:
     paths:
       - "tools/import_kenney_sheet.py"
       - "tools/slice_kenney_sheet.py"
+      - "tools/extract_kenney_forest_trees.py"
       - "assets/source/kenney_roguelike/roguelikeSheet_transparent.png.b64"
       - "tools/generate_forest_tiles.py"
       - "tools/generate_blob_masks.py"
@@ -30,6 +31,8 @@ jobs:
         run: python tools/import_kenney_sheet.py
       - name: Split CC0 atlas into independent tile PNGs
         run: python tools/slice_kenney_sheet.py
+      - name: Extract independent forest tree sprites
+        run: python tools/extract_kenney_forest_trees.py
       - name: Generate ground materials
         run: python tools/generate_forest_tiles.py
       - name: Generate 47 blob transition masks
@@ -40,7 +43,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A assets/third_party/kenney_roguelike/ assets/tilesets/forest_ground/
+          git add -A assets/third_party/kenney_roguelike/ assets/tilesets/forest_ground/ assets/environment/forest/
           if git diff --cached --quiet; then
             echo "Generated assets are already up to date."
           else
