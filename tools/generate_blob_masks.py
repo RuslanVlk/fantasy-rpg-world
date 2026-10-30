@@ -92,6 +92,20 @@ def main():
             "neighbors": [name for name, bit in ALL_BITS.items() if value & bit],
         })
     atlas.save(OUT / "forest_blob_masks.png", optimize=True)
+
+    # Visual integration check: white mask areas select grass, black areas
+    # leave the dirt base visible. This is a preview, not a terrain atlas.
+    grass = Image.open(ROOT / "assets" / "tilesets" / "forest_ground" / "grass_deep.png").convert("RGBA")
+    dirt = Image.open(ROOT / "assets" / "tilesets" / "forest_ground" / "dirt.png").convert("RGBA")
+    blend_preview = Image.new("RGBA", (columns * S, rows * S), (0, 0, 0, 0))
+    for index, value in enumerate(values):
+        mask = Image.open(OUT / f"mask_{value:03d}.png").convert("L")
+        blend_preview.alpha_composite(
+            Image.composite(grass, dirt, mask),
+            ((index % columns) * S, (index // columns) * S)
+        )
+    blend_preview.save(OUT / "forest_blob_blend_preview.png", optimize=True)
+
     metadata = {
         "layout": "47-tile-blob",
         "tile_width": S,
@@ -103,6 +117,7 @@ def main():
         "bit_flags": ALL_BITS,
         "diagonal_rule": "A diagonal flag is valid only when both adjacent cardinal flags are set.",
         "edge_depth_pixels": 10,
+        "blend_preview": "forest_blob_blend_preview.png",
         "masks": entries,
         "note": "Generic alpha templates; the game map renderer must select a mask from the 8-neighbour terrain pattern."
     }
