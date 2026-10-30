@@ -15,6 +15,7 @@ on:
       - ".github/workflows/generate-forest-assets.yml"
 jobs:
   generate:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
