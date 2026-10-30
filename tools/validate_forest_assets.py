@@ -122,6 +122,44 @@ def validate_ground():
         print(f"PASS tile {name} + 3 variants: seam H={horizontal_seam:.2f}/{horizontal_inner:.2f}, "
               f"V={vertical_seam:.2f}/{vertical_inner:.2f}")
 
+def validate_forest_demo_map():
+    demo = ROOT / "assets" / "maps" / "forest_demo"
+    metadata = json.loads((demo / "forest_demo_map.json").read_text(encoding="utf-8"))
+    assert metadata["format"] == "fantasy-rpg-forest-demo-v1"
+    grid = metadata["grid"]
+    assert grid == {"width": 20, "height": 14, "tile_width": 64, "tile_height": 64}
+    expected_size = (grid["width"] * 64, grid["height"] * 64)
+    ground = Image.open(demo / "forest_demo_ground.png").convert("RGBA")
+    props = Image.open(demo / "forest_demo_props.png").convert("RGBA")
+    combined = Image.open(demo / "forest_demo_map.png").convert("RGBA")
+    preview_2x = Image.open(demo / "forest_demo_map_2x.png").convert("RGBA")
+    assert ground.size == props.size == combined.size == expected_size
+    assert props.getchannel("A").getbbox() is not None
+    assert preview_2x.size == (expected_size[0] * 2, expected_size[1] * 2)
+    rebuilt = Image.alpha_composite(ground, props)
+    assert ImageChops.difference(rebuilt, combined).getbbox() is None
+
+    layers = metadata["layers"]
+    assert len(layers) == 6
+    assert layers[0]["name"] == "base"
+    for layer in layers[1:]:
+        assert layer["material"] in MATERIALS
+        for cell in layer["cells"]:
+            assert 0 <= cell["x"] < grid["width"] and 0 <= cell["y"] < grid["height"]
+            mask_path = ROOT / cell["mask"]
+            texture_path = ROOT / cell["texture"]
+            assert mask_path.exists(), f"missing mask {cell['mask']}"
+            assert texture_path.exists(), f"missing texture {cell['texture']}"
+            assert 0 <= cell["neighbor_mask"] <= 255
+    objects = metadata["objects"]
+    assert len([obj for obj in objects if obj["type"] == "tree"]) >= 5
+    assert len([obj for obj in objects if obj["type"] == "plant"]) >= 8
+    for obj in objects:
+        assert (ROOT / obj["sprite"]).exists(), f"missing prop sprite {obj['sprite']}"
+        px, py = obj["pixel_position"]
+        assert px >= 0 and py >= 0, f"prop clipped above/left map bounds: {obj['id']}"
+    print(f"PASS forest demo map: {len(layers)} terrain layers + {len(objects)} placed props")
+
 def validate_masks():
     metadata = json.loads((MASKS / "blob_masks.json").read_text(encoding="utf-8"))
     assert metadata["layout"] == "47-tile-blob"
@@ -152,5 +190,6 @@ if __name__ == "__main__":
     validate_ground()
     validate_forest_trees()
     validate_forest_plants()
+    validate_forest_demo_map()
     validate_masks()
     print("ALL FOREST ASSET CHECKS PASSED")
