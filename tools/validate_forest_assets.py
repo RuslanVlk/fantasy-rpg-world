@@ -156,6 +156,29 @@ def validate_forest_demo_map():
             assert mask_path.exists(), f"missing mask {cell['mask']}"
             assert texture_path.exists(), f"missing texture {cell['texture']}"
             assert 0 <= cell["neighbor_mask"] <= 255
+    tiled_map = json.loads((demo / "forest_demo_map.tmj").read_text(encoding="utf-8"))
+    ground_tileset = json.loads((demo / "forest_demo_ground.tsj").read_text(encoding="utf-8"))
+    props_tileset = json.loads((demo / "forest_demo_props.tsj").read_text(encoding="utf-8"))
+    assert tiled_map["orientation"] == "orthogonal"
+    assert tiled_map["width"] == grid["width"] and tiled_map["height"] == grid["height"]
+    assert len(tiled_map["layers"]) == 2
+    tile_layer = tiled_map["layers"][0]
+    assert len(tile_layer["data"]) == grid["width"] * grid["height"]
+    assert tile_layer["data"] == list(range(1, grid["width"] * grid["height"] + 1))
+    assert ground_tileset["imagewidth"] == expected_size[0]
+    assert ground_tileset["imageheight"] == expected_size[1]
+    assert ground_tileset["tilecount"] == grid["width"] * grid["height"]
+    assert props_tileset["tilecount"] == len(props_tileset["tiles"])
+    assert len(tiled_map["layers"][1]["objects"]) == len(metadata["objects"])
+    first_prop_gid = grid["width"] * grid["height"] + 1
+    for tile in props_tileset["tiles"]:
+        image_path = (demo / tile["image"]).resolve()
+        assert image_path.exists(), f"missing Tiled prop image {tile['image']}"
+        sprite = Image.open(image_path).convert("RGBA")
+        assert list(sprite.size) == [tile["imagewidth"], tile["imageheight"]]
+    for obj in tiled_map["layers"][1]["objects"]:
+        assert obj["gid"] >= first_prop_gid
+        assert obj["width"] > 0 and obj["height"] > 0
     objects = metadata["objects"]
     assert len([obj for obj in objects if obj["type"] == "tree"]) >= 5
     assert len([obj for obj in objects if obj["type"] == "plant"]) >= 8
@@ -163,6 +186,7 @@ def validate_forest_demo_map():
         assert (ROOT / obj["sprite"]).exists(), f"missing prop sprite {obj['sprite']}"
         px, py = obj["pixel_position"]
         assert px >= 0 and py >= 0, f"prop clipped above/left map bounds: {obj['id']}"
+    print(f"PASS Tiled export: {len(tiled_map[\"layers\"])} layers + {len(tiled_map[\"layers\"][1][\"objects\"])} image objects")
     print(f"PASS forest demo map: {len(layers)} terrain layers + {len(objects)} placed props")
 
 def validate_masks():
