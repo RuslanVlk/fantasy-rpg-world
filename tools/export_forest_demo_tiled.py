@@ -46,7 +46,6 @@ def main():
         for entry in records:
             tile_id = len(collection)
             tile_ids[(category, entry["id"])] = tile_id
-            image_path = (base_dir / entry["file"]).relative_to(MAP_DIR).as_posix()
             collection.append({
                 "id": tile_id,
                 "image": str(Path("..", "..", "environment", "forest",
