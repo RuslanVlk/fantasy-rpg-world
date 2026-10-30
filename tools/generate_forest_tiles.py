@@ -162,10 +162,33 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     names = list(MATERIALS)
     tiles = []
+    variant_dir = OUT / "variants"
+    variant_dir.mkdir(parents=True, exist_ok=True)
+    variant_atlas = Image.new("RGBA", (4 * S, len(MATERIALS) * S), (0, 0, 0, 0))
+    material_records = []
+
     for index, (name, palette) in enumerate(MATERIALS.items()):
-        tile = make_material(name, palette, SEED + index * 101)
-        tile.save(OUT / f"{name}.png", optimize=True)
-        tiles.append(tile)
+        base = make_material(name, palette, SEED + index * 101)
+        base.save(OUT / f"{name}.png", optimize=True)
+        tiles.append(base)
+
+        variant_files = [f"{name}.png"]
+        variant_atlas.alpha_composite(base, (0, index * S))
+        for variant in range(2, 5):
+            seed = SEED + index * 1009 + variant * 7919
+            alternate = make_material(name, palette, seed)
+            filename = f"{name}_v{variant:02d}.png"
+            alternate.save(variant_dir / filename, optimize=True)
+            variant_files.append(f"variants/{filename}")
+            variant_atlas.alpha_composite(alternate, ((variant - 1) * S, index * S))
+        material_records.append({
+            "id": index,
+            "name": name,
+            "file": f"{name}.png",
+            "variants": variant_files
+        })
+
+    variant_atlas.save(OUT / "forest_ground_variants_atlas.png", optimize=True)
 
     columns = 4
     rows = (len(tiles) + columns - 1) // columns
@@ -191,10 +214,9 @@ def main():
         "atlas_columns": columns,
         "atlas_rows": rows,
         "projection": "diagonal 3/4",
-        "materials": [
-            {"id": index, "name": name, "file": f"{name}.png"}
-            for index, name in enumerate(names)
-        ],
+        "materials": material_records,
+        "variants_per_material": 4,
+        "variants_atlas": "forest_ground_variants_atlas.png",
         "generator_seed": SEED,
         "tileable": True,
         "texture_method": "multi-scale periodic value noise plus material-specific pixel clusters",
@@ -202,7 +224,7 @@ def main():
         "note": "Procedural base materials for iteration; not final hand-painted production art."
     }
     (OUT / "tileset.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
-    print(f"Generated {len(tiles)} 64x64 materials and a {columns}x{rows} atlas in {OUT}")
+    print(f"Generated {len(tiles)} materials with 4 variants each, plus 47-mask compatible atlases in {OUT}")
 
 if __name__ == "__main__":
     main()
