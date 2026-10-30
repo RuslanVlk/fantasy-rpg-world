@@ -80,9 +80,9 @@ def decorate(name, image, palette, seed):
             ((0, 2), (1, 1), (2, 1), (3, 0)),
             ((0, 1), (1, 0), (2, 1)),
         )
-        for _ in range(22):
+        for _ in range(34):
             put_pattern(image, rng.randrange(6, 54), rng.randrange(6, 54),
-                        rng.choice(tufts), rng.choice((light, light, high, base)))
+                        rng.choice(tufts), rng.choice((light, light, high, high, base)))
 
     elif name == "dirt":
         pebbles = (
@@ -90,12 +90,12 @@ def decorate(name, image, palette, seed):
             ((0, 0), (1, 0), (2, 0), (1, 1)),
             ((0, 0), (0, 1), (1, 1), (2, 1)),
         )
-        for _ in range(23):
+        for _ in range(32):
             put_pattern(image, rng.randrange(6, 54), rng.randrange(6, 54),
                         rng.choice(pebbles), rng.choice((base, mid, high)))
 
     elif name == "forest_path":
-        for _ in range(18):
+        for _ in range(23):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (2, 0), (3, 0)),
                 ((0, 1), (1, 0), (2, 0)),
@@ -105,15 +105,15 @@ def decorate(name, image, palette, seed):
                         pattern, rng.choice((base, mid, light)))
 
     elif name == "stone":
-        for _ in range(12):
+        for _ in range(16):
             put_pattern(image, rng.randrange(6, 53), rng.randrange(6, 53),
                         ((0, 0), (1, 0), (1, 1), (2, 1)), rng.choice((base, mid)))
-        for _ in range(10):
+        for _ in range(14):
             put_pattern(image, rng.randrange(6, 54), rng.randrange(6, 54),
                         ((0, 0), (1, 0)), rng.choice((light, high)))
 
     elif name == "sand":
-        for _ in range(25):
+        for _ in range(30):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (2, 0)),
                 ((0, 0), (1, 0)),
@@ -123,7 +123,7 @@ def decorate(name, image, palette, seed):
                         pattern, rng.choice((mid, light, high)))
 
     elif name == "water":
-        for _ in range(16):
+        for _ in range(21):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (2, 0), (3, 0)),
                 ((0, 0), (1, 0), (2, 0)),
@@ -133,7 +133,7 @@ def decorate(name, image, palette, seed):
                         pattern, rng.choice((light, high)))
 
     elif name == "mud":
-        for _ in range(18):
+        for _ in range(22):
             pattern = rng.choice((
                 ((0, 0), (1, 0), (0, 1), (1, 1)),
                 ((0, 0), (1, 0), (2, 0)),
@@ -147,13 +147,13 @@ def make_material(name, palette, seed):
         make_periodic_noise(grid, seed + index * 173)
         for index, grid in enumerate((4, 8, 16, 32))
     ]
-    weights = (.18, .34, .30, .18)
+    weights = (.08, .24, .38, .30)
     image = Image.new("RGBA", (S, S), (0, 0, 0, 255))
     for y in range(S):
         for x in range(S):
             noise = sum(weight * field(x, y)
                         for weight, field in zip(weights, fields))
-            value = max(0.0, min(1.0, .5 + noise * .34))
+            value = max(0.0, min(1.0, .5 + noise * .38))
             image.putpixel((x, y), (*tonal_color(value, palette), 255))
     decorate(name, image, palette, seed)
     return image
@@ -174,6 +174,17 @@ def main():
         atlas.alpha_composite(tile, ((index % columns) * S, (index // columns) * S))
     atlas.save(OUT / "forest_ground_atlas.png", optimize=True)
 
+    repeat_preview = Image.new("RGBA", (columns * 3 * S, rows * 3 * S), (0, 0, 0, 0))
+    for index, tile in enumerate(tiles):
+        for repeat_y in range(3):
+            for repeat_x in range(3):
+                repeat_preview.alpha_composite(
+                    tile,
+                    ((index % columns) * 3 * S + repeat_x * S,
+                     (index // columns) * 3 * S + repeat_y * S)
+                )
+    repeat_preview.save(OUT / "forest_ground_repeat_preview.png", optimize=True)
+
     metadata = {
         "tile_width": S,
         "tile_height": S,
@@ -187,6 +198,7 @@ def main():
         "generator_seed": SEED,
         "tileable": True,
         "texture_method": "multi-scale periodic value noise plus material-specific pixel clusters",
+        "repeat_preview": "forest_ground_repeat_preview.png",
         "note": "Procedural base materials for iteration; not final hand-painted production art."
     }
     (OUT / "tileset.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
