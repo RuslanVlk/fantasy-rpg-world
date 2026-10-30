@@ -1,0 +1,101 @@
+{
+  "asset_pack": "Kenney Roguelike/RPG pack",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source_atlas": "assets/third_party/kenney_roguelike/roguelikeSheet_transparent.png",
+  "tile_size": 16,
+  "count": 6,
+  "sprites": [
+    {
+      "id": "flower_blue_01",
+      "file": "flower_blue_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 28
+        }
+      ],
+      "source_description": "small blue flower tuft"
+    },
+    {
+      "id": "flower_orange_01",
+      "file": "flower_orange_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 29
+        }
+      ],
+      "source_description": "small orange flower tuft"
+    },
+    {
+      "id": "flower_purple_01",
+      "file": "flower_purple_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 30
+        }
+      ],
+      "source_description": "small purple flower tuft"
+    },
+    {
+      "id": "flower_white_01",
+      "file": "flower_white_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 11,
+          "column": 25
+        }
+      ],
+      "source_description": "small white flower cluster"
+    },
+    {
+      "id": "ground_cover_01",
+      "file": "ground_cover_01.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 11,
+          "column": 26
+        }
+      ],
+      "source_description": "small leafy ground-cover clump"
+    },
+    {
+      "id": "ground_cover_02",
+      "file": "ground_cover_02.png",
+      "size": [
+        16,
+        16
+      ],
+      "source_cells": [
+        {
+          "row": 11,
+          "column": 28
+        }
+      ],
+      "source_description": "small leafy ground-cover clump"
+    }
+  ],
+  "note": "Separate native-resolution transparent PNGs; contact sheet is a preview."
+}

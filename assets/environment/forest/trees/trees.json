@@ -10,7 +10,7 @@
     "rows": 31
   },
   "view": "3/4 RPG",
-  "count": 12,
+  "count": 15,
   "sprites": [
     {
       "id": "tree_small_01",
@@ -215,7 +215,68 @@
         }
       ],
       "source_description": "two-cell vertically assembled tree"
+    },
+    {
+      "id": "tree_fruit_01",
+      "file": "tree_fruit_01.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 23
+        },
+        {
+          "row": 11,
+          "column": 23
+        }
+      ],
+      "source_description": "two-cell fruit-bearing tree"
+    },
+    {
+      "id": "tree_fruit_02",
+      "file": "tree_fruit_02.png",
+      "size": [
+        16,
+        32
+      ],
+      "source_cells": [
+        {
+          "row": 10,
+          "column": 24
+        },
+        {
+          "row": 11,
+          "column": 24
+        }
+      ],
+      "source_description": "two-cell fruit-bearing tree"
+    },
+    {
+      "id": "tree_dead_01",
+      "file": "tree_dead_01.png",
+      "size": [
+        16,
+        48
+      ],
+      "source_cells": [
+        {
+          "row": 9,
+          "column": 27
+        },
+        {
+          "row": 10,
+          "column": 27
+        },
+        {
+          "row": 11,
+          "column": 27
+        }
+      ],
+      "source_description": "three-cell bare tree trunk and branches"
     }
   ],
-  "note": "Native-resolution transparent sprites extracted from CC0 source cells. Contact sheet is for preview; use the individual PNG files in maps."
+  "note": "Native-resolution transparent sprites extracted from CC0 source cells. Contact sheet is a preview; use individual PNG files in maps."
 }
