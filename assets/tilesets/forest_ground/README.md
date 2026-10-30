@@ -1,19 +1,24 @@
 # Forest ground and transition resources
 
-This folder contains a deterministic 64×64 material prototype, its atlas, and
-a generic 47-configuration blob-mask library.
+This folder contains a deterministic 64×64 material prototype, four texture
+variants per material, atlases, and a generic 47-configuration blob-mask library.
 
 ## Ground materials
-Eight individual RGBA PNGs are generated: `grass_deep`, `grass_light`,
-`dirt`, `forest_path`, `stone`, `sand`, `water`, and `mud`.
-`forest_ground_atlas.png` is a 4×2 atlas; `tileset.json` describes its cells.
+
+Eight base RGBA PNGs are generated: grass_deep, grass_light, dirt, forest_path,
+stone, sand, water, and mud. Each material has four distinct 64×64 textures.
+The alternate files are in variants/; tileset.json maps the four file paths.
+forest_ground_atlas.png contains the eight base materials (4×2).
+forest_ground_variants_atlas.png groups four variants per material (4×8).
+forest_ground_repeat_preview.png shows a 3×3 repeat for each base texture.
 
 ## Autotile mask library
-`blob_masks/` contains 47 valid 8-neighbour alpha masks. White selects the
-overlay terrain; black leaves the base terrain visible. The bit layout and
-filenames are documented in `blob_masks/blob_masks.json`. A renderer still
-needs to sample the eight neighbouring cells and composite the selected mask
-between two material textures.
+
+blob_masks/ contains 47 connected 8-neighbour alpha masks. White selects overlay
+terrain A; black leaves base terrain B visible. Each mask includes a central
+terrain body, connected cardinal lobes, and concave/convex diagonal corners.
+The bit layout is documented in blob_masks/blob_masks.json. A renderer samples
+the eight neighbouring cells and composites the selected mask over the base.
 
 ## Rebuild and validation
 
@@ -24,10 +29,10 @@ python tools/generate_blob_masks.py
 python tools/validate_forest_assets.py
 ```
 
-The GitHub Actions workflow runs all three stages, checks dimensions, atlas
-consistency and edge continuity, then commits generated PNG/JSON assets to
-`main` and uploads a ZIP artifact.
+GitHub Actions generates, validates and commits the files, then uploads a ZIP
+artifact. Validation checks dimensions, atlas consistency, distinct variants,
+repeat-edge continuity, all 47 connected masks, and separate licensed prop PNGs.
 
-These are functional technical base resources, not final hand-painted game art.
-The forest reference still governs final texture detail, transitions, props,
-trees, rocks and the overall visual match.
+These are working technical base resources, not final hand-painted game art.
+The forest reference remains the authority for final palette, texture detail,
+transitions, props, trees, rocks and the overall visual match.
