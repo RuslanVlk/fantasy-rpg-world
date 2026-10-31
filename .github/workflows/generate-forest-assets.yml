@@ -16,6 +16,7 @@ on:
       - "tools/forest_autotile.py"
       - "tools/generate_forest_demo_map.py"
       - "tools/export_forest_demo_tiled.py"
+      - "tools/generate_forest_navigation.py"
       - "tools/generate_blob_masks.py"
       - "tools/validate_forest_assets.py"
       - ".github/workflows/generate-forest-assets.yml"
@@ -47,6 +48,8 @@ jobs:
         run: python tools/generate_forest_demo_map.py
       - name: Export editable Tiled JSON map
         run: python tools/export_forest_demo_tiled.py
+      - name: Export walkability, trunk collisions and canopy occlusion
+        run: python tools/generate_forest_navigation.py
       - name: Validate dimensions, atlases and tile seams
         run: python tools/validate_forest_assets.py
       - name: Commit generated assets to the repository
