@@ -40,3 +40,5 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+# Redeploy after GitHub Pages was enabled.
