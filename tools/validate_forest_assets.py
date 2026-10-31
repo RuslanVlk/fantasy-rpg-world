@@ -202,7 +202,7 @@ def validate_forest_demo_map():
     print(f"PASS navigation: {sum(sum(row) for row in navigation['walkable'])} walkable cells, "
           f"{len(navigation['collision_shapes'])} trunk colliders, "
           f"{len(navigation['canopy_occlusion'])} canopy regions")
-    print(f"PASS Tiled export: {len(tiled_map[\"layers\"])} layers + {len(tiled_map[\"layers\"][1][\"objects\"])} image objects")
+    print(f"PASS Tiled export: {len(tiled_map['layers'])} layers + {len(tiled_map['layers'][1]['objects'])} image objects")
     print(f"PASS forest demo map: {len(layers)} terrain layers + {len(objects)} placed props")
 
 def validate_masks():
