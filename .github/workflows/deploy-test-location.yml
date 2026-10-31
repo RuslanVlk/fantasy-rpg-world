@@ -1,0 +1,39 @@
+name: Deploy forest test location
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/test-location/**"
+      - "assets/maps/forest_demo/**"
+      - ".github/workflows/deploy-test-location.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare test location
+        run: |
+          mkdir -p site
+          cp docs/test-location/index.html site/index.html
+          cp -R assets site/assets
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
