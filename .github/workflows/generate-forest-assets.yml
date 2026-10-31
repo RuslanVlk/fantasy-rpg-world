@@ -50,8 +50,6 @@ jobs:
         run: python tools/export_forest_demo_tiled.py
       - name: Export walkability, trunk collisions and canopy occlusion
         run: python tools/generate_forest_navigation.py
-      - name: Export walkability, trunk collisions and canopy occlusion
-        run: python tools/generate_forest_navigation.py
       - name: Validate dimensions, atlases and tile seams
         run: python tools/validate_forest_assets.py
       - name: Commit generated assets to the repository
