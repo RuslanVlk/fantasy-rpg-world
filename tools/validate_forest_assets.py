@@ -161,7 +161,7 @@ def validate_forest_demo_map():
     props_tileset = json.loads((demo / "forest_demo_props.tsj").read_text(encoding="utf-8"))
     assert tiled_map["orientation"] == "orthogonal"
     assert tiled_map["width"] == grid["width"] and tiled_map["height"] == grid["height"]
-    assert len(tiled_map["layers"]) == 2
+    assert len(tiled_map["layers"]) == 3
     tile_layer = tiled_map["layers"][0]
     assert len(tile_layer["data"]) == grid["width"] * grid["height"]
     assert tile_layer["data"] == list(range(1, grid["width"] * grid["height"] + 1))
@@ -186,6 +186,22 @@ def validate_forest_demo_map():
         assert (ROOT / obj["sprite"]).exists(), f"missing prop sprite {obj['sprite']}"
         px, py = obj["pixel_position"]
         assert px >= 0 and py >= 0, f"prop clipped above/left map bounds: {obj['id']}"
+    navigation = json.loads((demo / "forest_demo_navigation.json").read_text(encoding="utf-8"))
+    assert navigation["grid"] == {"width": grid["width"], "height": grid["height"], "cell_size": 64}
+    assert len(navigation["walkable"]) == grid["height"]
+    assert all(len(row) == grid["width"] for row in navigation["walkable"])
+    assert all(not navigation["walkable"][y][x]
+               for y in range(grid["height"]) for x in range(grid["width"])
+               if navigation["materials"][y][x] == "water")
+    collision_layer = next(layer for layer in tiled_map["layers"]
+                           if layer["name"] == "Tree Trunk Collisions")
+    assert len(collision_layer["objects"]) == len(navigation["collision_shapes"])
+    assert len(navigation["canopy_occlusion"]) == len(navigation["collision_shapes"])
+    assert all(shape["width"] > 0 and shape["height"] > 0
+               for shape in navigation["collision_shapes"])
+    print(f"PASS navigation: {sum(sum(row) for row in navigation['walkable'])} walkable cells, "
+          f"{len(navigation['collision_shapes'])} trunk colliders, "
+          f"{len(navigation['canopy_occlusion'])} canopy regions")
     print(f"PASS Tiled export: {len(tiled_map[\"layers\"])} layers + {len(tiled_map[\"layers\"][1][\"objects\"])} image objects")
     print(f"PASS forest demo map: {len(layers)} terrain layers + {len(objects)} placed props")
 
