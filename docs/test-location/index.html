@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Маг-геометр — тестовая локация</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101b19;color:#eaf3df;font:14px system-ui}#game{display:block;width:100vw;height:100dvh;image-rendering:pixelated;touch-action:none}
+#hud{position:fixed;top:10px;left:10px;padding:9px 12px;background:#10201dcc;border:1px solid #78947a66;border-radius:10px;backdrop-filter:blur(5px);pointer-events:none}#hud b{display:block;font-size:14px}#hud small{color:#c4d6bb}
+#help{position:fixed;right:10px;top:10px;padding:8px 10px;background:#10201dcc;border:1px solid #78947a66;border-radius:10px;color:#c4d6bb;max-width:210px;text-align:right;pointer-events:none}
+#pad{position:fixed;left:18px;bottom:20px;width:150px;height:130px;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:5px}
+button{border:1px solid #b5c9a777;background:#1d332bd9;color:white;border-radius:12px;font-size:23px;touch-action:none;user-select:none}button:active{background:#577a58}
+#pad button:nth-child(1){grid-area:1/2}#pad button:nth-child(2){grid-area:2/1}#pad button:nth-child(3){grid-area:2/2}#pad button:nth-child(4){grid-area:2/3}#pad button:nth-child(5){grid-area:3/2}
+#reset{position:fixed;right:16px;bottom:22px;padding:12px 15px;font-size:14px}
+#status{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);padding:7px 11px;background:#10201dcc;border-radius:9px;white-space:nowrap;color:#d8e8ce}
+@media(min-width:800px){#pad{opacity:.72}}
+</style></head>
+<body>
+<canvas id="game"></canvas>
+<div id="hud"><b>Лесной проход</b><small>Тест движения и столкновений</small></div>
+<div id="help">WASD / стрелки<br>или кнопки слева</div>
+<div id="pad"><button data-dir="up">▲</button><button data-dir="left">◀</button><button data-dir="none">●</button><button data-dir="right">▶</button><button data-dir="down">▼</button></div>
+<button id="reset">Вернуть игрока</button><div id="status">Загрузка локации…</div>
+<script>
+(()=>{
+const W=1280,H=896,T=64,canvas=document.getElementById('game'),ctx=canvas.getContext('2d'),status=document.getElementById('status');
+ctx.imageSmoothingEnabled=false;
+const root='https://raw.githubusercontent.com/RuslanVlk/fantasy-rpg-world/main/';
+const ground=new Image(),props=new Image();ground.src=root+'assets/maps/forest_demo/forest_demo_ground.png';props.src=root+'assets/maps/forest_demo/forest_demo_props.png';
+let nav=null,ready=false,player={x:610,y:470},keys={},touch={x:0,y:0},last=0,zoom=1;
+fetch(root+'assets/maps/forest_demo/forest_demo_navigation.json').then(r=>r.json()).then(v=>{nav=v;ready=true;status.textContent='Локация готова · WASD / стрелки';}).catch(()=>status.textContent='Не удалось загрузить навигацию');
+function resize(){const d=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(innerWidth*d);canvas.height=Math.round(innerHeight*d);ctx.setTransform(d,0,0,d,0,0);ctx.imageSmoothingEnabled=false;zoom=Math.min(innerWidth/W,innerHeight/H)*1.12;if(innerWidth<innerHeight)zoom=Math.min(zoom,innerWidth/760);}
+addEventListener('resize',resize);resize();
+function blocked(x,y){
+ if(x<12||y<12||x>W-12||y>H-12)return true;
+ const c=Math.floor(x/T),r=Math.floor(y/T);
+ if(nav && nav.walkable && nav.walkable[r] && nav.walkable[r][c]===false)return true;
+ if(nav)for(const a of nav.collision_shapes||[])if(x>a.x-12&&x<a.x+a.width+12&&y>a.y-12&&y<a.y+a.height+12)return true;
+ return false;
+}
+function move(dx,dy){const speed=2.8;let nx=player.x+dx*speed,ny=player.y+dy*speed;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny;}
+function drawHero(x,y){
+ // Temporary readable pixel-art test avatar; replaced when the final player sprite is integrated.
+ const p=(ox,oy,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(Math.round(x+ox),Math.round(y+oy),w,h)};
+ p(-5,-15,10,5,'#30251e');p(-4,-19,8,7,'#dca879');p(-5,-20,10,3,'#493323');p(-3,-12,6,2,'#dca879');p(-6,-10,12,9,'#496f9a');p(-5,-2,4,5,'#26394b');p(1,-2,4,5,'#26394b');p(-6,3,5,2,'#33271e');p(1,3,5,2,'#33271e');p(-7,-9,3,7,'#dca879');p(4,-9,3,7,'#dca879');
+}
+function frame(ts){let dt=Math.min((ts-last)/16.67||1,2);last=ts;
+ let dx=(keys.ArrowRight||keys.d||touch.x>0?1:0)-(keys.ArrowLeft||keys.a||touch.x<0?1:0),dy=(keys.ArrowDown||keys.s||touch.y>0?1:0)-(keys.ArrowUp||keys.w||touch.y<0?1:0);
+ if(dx&&dy){dx*=.707;dy*=.707}if(dx||dy)move(dx*dt,dy*dt);
+ const vw=innerWidth/zoom,vh=innerHeight/zoom,cx=Math.max(vw/2,Math.min(W-vw/2,player.x)),cy=Math.max(vh/2,Math.min(H-vh/2,player.y));
+ ctx.clearRect(0,0,innerWidth,innerHeight);ctx.save();ctx.translate(innerWidth/2-cx*zoom,innerHeight/2-cy*zoom);ctx.scale(zoom,zoom);
+ ctx.fillStyle='#233d2b';ctx.fillRect(0,0,W,H);
+ if(ground.complete&&ground.naturalWidth)ctx.drawImage(ground,0,0);if(props.complete&&props.naturalWidth)ctx.drawImage(props,0,0);
+ // Fade the nearest canopy while the player walks beneath it.
+ if(nav)for(const c of nav.canopy_occlusion||[]){const under=player.x>=c.x-4&&player.x<=c.x+c.width+4&&player.y>=c.y+c.height-12&&player.y<=c.y+c.height+24;if(under){ctx.globalAlpha=c.alpha_when_player_under;ctx.drawImage(props,0,0);ctx.globalAlpha=1;}}
+ drawHero(player.x,player.y);
+ ctx.restore();requestAnimationFrame(frame);
+}
+addEventListener('keydown',e=>{keys[e.key]=true;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault()});addEventListener('keyup',e=>keys[e.key]=false);
+document.querySelectorAll('[data-dir]').forEach(b=>{const d=b.dataset.dir;if(d==='none')return;const set=v=>{touch={x:d==='left'?-v:d==='right'?v:0,y:d==='up'?-v:d==='down'?v:0}};b.addEventListener('pointerdown',e=>{e.preventDefault();b.setPointerCapture(e.pointerId);set(1)});['pointerup','pointercancel','lostpointercapture'].forEach(ev=>b.addEventListener(ev,()=>set(0)))});
+document.getElementById('reset').onclick=()=>player={x:610,y:470};
+Promise.all([new Promise(r=>ground.onload=r),new Promise(r=>props.onload=r)]).then(()=>{if(ready)status.textContent='Локация готова · WASD / стрелки';});
+requestAnimationFrame(frame);
+})();
+</script></body></html>
