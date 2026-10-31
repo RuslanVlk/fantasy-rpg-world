@@ -9,7 +9,7 @@
   "tilewidth": 64,
   "tileheight": 64,
   "infinite": false,
-  "nextlayerid": 3,
+  "nextlayerid": 4,
   "nextobjectid": 24,
   "backgroundcolor": "#22362a",
   "layers": [
@@ -616,6 +616,106 @@
           "visible": true
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "Tree Trunk Collisions",
+      "type": "objectgroup",
+      "draworder": "topdown",
+      "opacity": 0.35,
+      "visible": true,
+      "objects": [
+        {
+          "id": 1,
+          "name": "prop_001",
+          "class": "tree_trunk_collision",
+          "x": 338,
+          "y": 108,
+          "width": 27,
+          "height": 20,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "blocks_movement",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "prop_002",
+          "class": "tree_trunk_collision",
+          "x": 914,
+          "y": 108,
+          "width": 27,
+          "height": 20,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "blocks_movement",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "prop_003",
+          "class": "tree_trunk_collision",
+          "x": 1170,
+          "y": 108,
+          "width": 27,
+          "height": 20,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "blocks_movement",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "prop_004",
+          "class": "tree_trunk_collision",
+          "x": 658,
+          "y": 628,
+          "width": 27,
+          "height": 12,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "blocks_movement",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "prop_005",
+          "class": "tree_trunk_collision",
+          "x": 978,
+          "y": 628,
+          "width": 27,
+          "height": 12,
+          "rotation": 0,
+          "visible": true,
+          "properties": [
+            {
+              "name": "blocks_movement",
+              "type": "bool",
+              "value": true
+            }
+          ]
+        }
+      ]
     }
   ],
   "tilesets": [
@@ -643,6 +743,11 @@
       "name": "ground_note",
       "type": "string",
       "value": "Each rendered ground cell is a unique image-atlas tile for easy cell-level editing."
+    },
+    {
+      "name": "navigation_manifest",
+      "type": "string",
+      "value": "forest_demo_navigation.json"
     }
   ]
 }
